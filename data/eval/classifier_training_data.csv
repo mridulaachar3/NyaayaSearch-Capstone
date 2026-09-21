@@ -1,0 +1,621 @@
+query,act_name,section_number,hybrid_score,semantic_score,bm25_score,matched_term_count,is_relevant
+"Seller sold me a defective product, who is responsible?","Consumer Protection Act, 2019",82,0.6197021842002869,0.5525907874107361,1.0,4,0
+"Seller sold me a defective product, who is responsible?","Consumer Protection Act, 2019",83,0.6115470304569828,0.5721770524978638,0.8346434927524644,3,1
+"Seller sold me a defective product, who is responsible?","Consumer Protection Act, 2019",86,0.6064139398475611,0.5916361808776855,0.6901544945373298,3,1
+"Seller sold me a defective product, who is responsible?","Consumer Protection Act, 2019",87,0.537427211984903,0.5257182121276855,0.6037781317029418,3,0
+"Seller sold me a defective product, who is responsible?","Indian Contract Act, 1872",116,0.4570288864876944,0.43896692991256714,0.5593799936149639,2,0
+"Seller sold me a defective product, who is responsible?","Consumer Protection Act, 2019",84,0.45234732987339915,0.42837539315223694,0.5881883145607593,2,1
+"Seller sold me a defective product, who is responsible?","Consumer Protection Act, 2019",85,0.38625342012713365,0.3966395854949951,0.3273984035697255,1,0
+"Seller sold me a defective product, who is responsible?","Transfer of Property Act, 1882",55,0.3855112043868313,0.37916794419288635,0.42145619647424065,2,0
+"Seller sold me a defective product, who is responsible?","Motor Vehicles Act, 1988",191,0.3769899010658264,0.4435175061225891,0.0,0,0
+"Seller sold me a defective product, who is responsible?","Indian Contract Act, 1872",121,0.37066223911770824,0.39030468463897705,0.25935488888479885,1,0
+Where do I file a consumer complaint for a small purchase?,"Consumer Protection Act, 2019",35,0.6187362579084894,0.554931640625,0.9802956763754028,3,1
+Where do I file a consumer complaint for a small purchase?,"Consumer Protection Act, 2019",17,0.5637672316116018,0.5199501514434814,0.812063860285231,2,0
+Where do I file a consumer complaint for a small purchase?,"Consumer Protection Act, 2019",38,0.5541520476325351,0.5094701647758484,0.8073493242157815,3,0
+Where do I file a consumer complaint for a small purchase?,"Consumer Protection Act, 2019",69,0.531839996643259,0.48676273226737976,0.787277818172467,1,0
+Where do I file a consumer complaint for a small purchase?,"Bharatiya Nagarik Suraksha Sanhita, 2023",216,0.4639324188232422,0.3693322539329529,1.0,2,0
+Where do I file a consumer complaint for a small purchase?,"Consumer Protection Act, 2019",34,0.4540998855297375,0.4009729325771332,0.7551526487301512,2,1
+Where do I file a consumer complaint for a small purchase?,"Consumer Protection Act, 2019",48,0.4418130334419269,0.38912519812583923,0.7403773838958863,1,0
+Where do I file a consumer complaint for a small purchase?,"Consumer Protection Act, 2019",36,0.4327777139487775,0.35338592529296875,0.8826643971224042,2,0
+Where do I file a consumer complaint for a small purchase?,"Consumer Protection Act, 2019",62,0.41544474140090965,0.3623265027999878,0.7164480934728001,1,0
+Where do I file a consumer complaint for a small purchase?,"Consumer Protection Act, 2019",16,0.4123863565030307,0.3533637523651123,0.7468477799512349,2,0
+Company is running a false or misleading advertisement,"Consumer Protection Act, 2019",21,0.6688284636393498,0.6387662291526794,0.8391811853351262,3,1
+Company is running a false or misleading advertisement,"Consumer Protection Act, 2019",89,0.6463164031505585,0.5839016437530518,1.0,3,1
+Company is running a false or misleading advertisement,"Bharatiya Nyaya Sanhita, 2023",175,0.4654858153822247,0.5005208253860474,0.26695393308151033,1,0
+Company is running a false or misleading advertisement,"Bharatiya Nyaya Sanhita, 2023",228,0.4208762092377031,0.446194052696228,0.27740838990296524,1,0
+Company is running a false or misleading advertisement,"Bharatiya Nyaya Sanhita, 2023",236,0.3997267646094178,0.42375776171684265,0.26355098519061326,1,0
+Company is running a false or misleading advertisement,"Bharatiya Nyaya Sanhita, 2023",227,0.3634642155994732,0.3790421187877655,0.2751893414588494,1,0
+Company is running a false or misleading advertisement,"Right to Information Act, 2005",20,0.35975070782340823,0.17575150728225708,0.20324375854059262,1,0
+Company is running a false or misleading advertisement,"Bharatiya Nyaya Sanhita, 2023",233,0.3564814134792072,0.371903657913208,0.26908861554700947,1,0
+Company is running a false or misleading advertisement,"Information Technology Act, 2000",85,0.35528157598092025,0.36099690198898315,0.322894748470112,1,0
+Company is running a false or misleading advertisement,"Consumer Protection Act, 2019",17,0.35435840198355917,0.3365723788738251,0.4551458166015151,2,0
+"I bought a house but the seller doesn't actually own it, is the sale valid?","Transfer of Property Act, 1882",41,1.791529819733208,0.574236273765564,0.7271716669009916,4,1
+"I bought a house but the seller doesn't actually own it, is the sale valid?","Specific Relief Act, 1963",17,0.7079249834296832,0.7100902795791626,0.6956546937609579,3,0
+"I bought a house but the seller doesn't actually own it, is the sale valid?","Specific Relief Act, 1963",13,0.612106473001337,0.6092986464500427,0.6280173907842633,5,0
+"I bought a house but the seller doesn't actually own it, is the sale valid?","Indian Contract Act, 1872",87,0.5479144940614898,0.5641982555389404,0.45563968674355043,2,0
+"I bought a house but the seller doesn't actually own it, is the sale valid?","Bharatiya Nagarik Suraksha Sanhita, 2023",505,0.5318781460760562,0.5257049798965454,0.5668592621475651,3,0
+"I bought a house but the seller doesn't actually own it, is the sale valid?","Transfer of Property Act, 1882",55,0.5018392312526703,0.6669566631317139,1.0,5,0
+"I bought a house but the seller doesn't actually own it, is the sale valid?","Indian Contract Act, 1872",81,0.4929033727836104,0.44041702151298523,0.7903259405768526,2,0
+"I bought a house but the seller doesn't actually own it, is the sale valid?","Transfer of Property Act, 1882",69,0.4917105076177615,0.6928203701972961,0.7569748990722109,2,0
+"I bought a house but the seller doesn't actually own it, is the sale valid?","Transfer of Property Act, 1882",54,0.48534978094514963,0.6448604464530945,0.9681694907628132,5,0
+"I bought a house but the seller doesn't actually own it, is the sale valid?","Specific Relief Act, 1963",28,0.48506811531528027,0.4970521926879883,0.41715822432731214,2,0
+How can I redeem my mortgage and get my property back?,"Transfer of Property Act, 1882",91,0.6796670489304669,0.634456992149353,0.9358572514808225,3,0
+How can I redeem my mortgage and get my property back?,"Transfer of Property Act, 1882",61,0.6562496662139893,0.5955878496170044,1.0,2,0
+How can I redeem my mortgage and get my property back?,"Transfer of Property Act, 1882",67,0.6532638587299585,0.5925271511077881,0.9974383763098713,3,0
+How can I redeem my mortgage and get my property back?,"Transfer of Property Act, 1882",92,0.6238466844288225,0.6369888782501221,0.5493742527747919,2,0
+How can I redeem my mortgage and get my property back?,"Transfer of Property Act, 1882",60,0.6088622617572363,0.5550834536552429,0.9136087416607908,3,1
+How can I redeem my mortgage and get my property back?,"Transfer of Property Act, 1882",95,0.5883157814529938,0.614058256149292,0.44244167870111084,2,0
+How can I redeem my mortgage and get my property back?,"Transfer of Property Act, 1882",90,0.5703778304902433,0.5759473443031311,0.5388170734032779,1,0
+How can I redeem my mortgage and get my property back?,"Transfer of Property Act, 1882",58,0.541641127739662,0.5285239815711975,0.6159715630896496,2,0
+How can I redeem my mortgage and get my property back?,"Transfer of Property Act, 1882",73,0.5293316383713094,0.5309885144233704,0.5199425349987927,2,0
+How can I redeem my mortgage and get my property back?,"Transfer of Property Act, 1882",64,0.5254222998696642,0.5903048515319824,0.15775458658938682,1,0
+What are the buyer's and seller's responsibilities when selling a house?,"Transfer of Property Act, 1882",55,0.6132449520650967,0.5605263710021973,0.9119834588789039,4,1
+What are the buyer's and seller's responsibilities when selling a house?,"Transfer of Property Act, 1882",69,0.5405484407311061,0.5673269033432007,0.3888036603168506,2,0
+What are the buyer's and seller's responsibilities when selling a house?,"Transfer of Property Act, 1882",54,0.5074723259622148,0.507135272026062,0.5093822187942212,4,0
+What are the buyer's and seller's responsibilities when selling a house?,"Indian Contract Act, 1872",81,0.4917303062535857,0.46627894043922424,0.6359545635233554,3,0
+What are the buyer's and seller's responsibilities when selling a house?,"Transfer of Property Act, 1882",120,0.4661919710192312,0.450344979763031,0.5559914887966245,2,0
+What are the buyer's and seller's responsibilities when selling a house?,"Transfer of Property Act, 1882",73,0.4474753439426422,0.5264415740966797,0.0,0,0
+What are the buyer's and seller's responsibilities when selling a house?,"Indian Contract Act, 1872",108,0.4359463350782101,0.3376517593860626,0.9929489406011537,3,0
+What are the buyer's and seller's responsibilities when selling a house?,"Transfer of Property Act, 1882",56,0.4342415112474046,0.46942198276519775,0.23488546624348053,1,0
+What are the buyer's and seller's responsibilities when selling a house?,"Specific Relief Act, 1963",17,0.43258628249168396,0.5089250206947327,0.0,0,0
+What are the buyer's and seller's responsibilities when selling a house?,"Indian Contract Act, 1872",80,0.4288948216236729,0.3458518981933594,0.8994712685194933,3,0
+My landlord isn't returning my security deposit,"Karnataka Rent Act, 1999",17,1.0723020285762088,0.5047518610954285,0.9523688291255588,3,1
+My landlord isn't returning my security deposit,"Karnataka Rent Act, 1999",19,1.054817656302986,0.48871204257011414,0.9810944870649886,3,1
+My landlord isn't returning my security deposit,"Karnataka Rent Act, 1999",45,0.9606947263684879,0.4419581890106201,0.9113736543326942,2,0
+My landlord isn't returning my security deposit,"Karnataka Rent Act, 1999",16,0.8939438268301403,0.42230668663978577,0.7853956857460571,2,0
+My landlord isn't returning my security deposit,"Transfer of Property Act, 1882",58,0.8819433130167377,0.36923471093177795,0.5208353134857142,4,0
+My landlord isn't returning my security deposit,"Karnataka Rent Act, 1999",27,0.8731939462662253,0.47733503580093384,0.39979107038727973,3,0
+My landlord isn't returning my security deposit,"Karnataka Rent Act, 1999",18,0.8346562162041665,0.3472352623939514,1.0,2,0
+My landlord isn't returning my security deposit,"Karnataka Rent Act, 1999",4,0.7675808283808101,0.35184115171432495,0.7354096529650755,3,0
+My landlord isn't returning my security deposit,"Transfer of Property Act, 1882",82,0.5478253623774032,0.3461170792579651,0.4734492129442342,2,0
+My landlord isn't returning my security deposit,"Transfer of Property Act, 1882",62,0.5306661576032639,0.41620874404907227,0.0,0,0
+"My landlord wants to evict me, what are my protections?","Karnataka Rent Act, 1999",41,1.3470055580334335,0.6861528754234314,0.9011533684894663,1,0
+"My landlord wants to evict me, what are my protections?","Karnataka Rent Act, 1999",27,1.2825960740447044,0.6282955408096313,1.0,2,1
+"My landlord wants to evict me, what are my protections?","Karnataka Rent Act, 1999",38,1.232688376920626,0.6359046697616577,0.7794320128306834,1,0
+"My landlord wants to evict me, what are my protections?","Karnataka Rent Act, 1999",28,1.1799553396184659,0.5968201160430908,0.8134161055103644,1,0
+"My landlord wants to evict me, what are my protections?","Karnataka Rent Act, 1999",37,1.13485639400886,0.5510673522949219,0.9123298011923369,1,0
+"My landlord wants to evict me, what are my protections?","Karnataka Rent Act, 1999",45,1.1077533694556938,0.5501449108123779,0.8211908190167699,1,0
+"My landlord wants to evict me, what are my protections?","Karnataka Rent Act, 1999",34,1.0857989627839906,0.5386263132095337,0.8084027594890536,1,0
+"My landlord wants to evict me, what are my protections?","Karnataka Rent Act, 1999",8,1.063241605785185,0.5002560019493103,0.9456304084872984,1,0
+"My landlord wants to evict me, what are my protections?","Karnataka Rent Act, 1999",54,1.0632099676836682,0.5415213108062744,0.7116813460841543,1,0
+"My landlord wants to evict me, what are my protections?","Karnataka Rent Act, 1999",52,1.0624717368802954,0.4921676814556122,0.9887270818362515,1,0
+How much can my landlord increase my rent by?,"Karnataka Rent Act, 1999",6,1.3948067271132083,0.7036371231079102,0.9720358560416651,4,0
+How much can my landlord increase my rent by?,"Karnataka Rent Act, 1999",9,1.2917248845491913,0.6570702791213989,0.8694011424714936,4,1
+How much can my landlord increase my rent by?,"Karnataka Rent Act, 1999",13,1.254142901967573,0.6181854009628296,0.9561239584131864,4,0
+How much can my landlord increase my rent by?,"Karnataka Rent Act, 1999",14,1.2405342772537682,0.6300684213638306,0.8404007805485953,4,0
+How much can my landlord increase my rent by?,"Karnataka Rent Act, 1999",34,1.2182892097569953,0.622187077999115,0.8059681728283391,2,0
+How much can my landlord increase my rent by?,"Karnataka Rent Act, 1999",10,1.2103103654486793,0.6251548528671265,0.760781299415467,3,0
+How much can my landlord increase my rent by?,"Karnataka Rent Act, 1999",12,1.2097589001059532,0.5825937986373901,1.0,5,0
+How much can my landlord increase my rent by?,"Karnataka Rent Act, 1999",8,1.1897172035156398,0.6031925082206726,0.812014474296114,3,0
+How much can my landlord increase my rent by?,"Karnataka Rent Act, 1999",41,1.174037161497581,0.6170967817306519,0.6774726285874682,2,0
+How much can my landlord increase my rent by?,"Karnataka Rent Act, 1999",16,1.1606028729951503,0.5730533599853516,0.87928561962132,3,0
+"I signed a contract under threat, is it valid?","Bharatiya Nyaya Sanhita, 2023",351,0.5541146636009217,0.4754289984703064,1.0,3,0
+"I signed a contract under threat, is it valid?","Indian Contract Act, 1872",15,0.49754207150271185,0.48699042201042175,0.5573347420249148,1,1
+"I signed a contract under threat, is it valid?","Indian Contract Act, 1872",53,0.3821257399772522,0.41906458139419556,0.17280561874635805,2,0
+"I signed a contract under threat, is it valid?","Specific Relief Act, 1963",14,0.38209542824685006,0.4233098030090332,0.1485473045944789,1,0
+"I signed a contract under threat, is it valid?","Specific Relief Act, 1963",11,0.36978886868894273,0.41335123777389526,0.12293546374242668,1,0
+"I signed a contract under threat, is it valid?","Indian Contract Act, 1872",19,0.3652461577758625,0.3799917697906494,0.28168764995564,3,1
+"I signed a contract under threat, is it valid?","Specific Relief Act, 1963",16,0.35722082378253506,0.3908308744430542,0.16676383030316347,3,0
+"I signed a contract under threat, is it valid?","Indian Contract Act, 1872",144,0.3558199163882175,0.3722359538078308,0.26279572421195735,4,0
+"I signed a contract under threat, is it valid?","Indian Contract Act, 1872",14,0.35549069714986287,0.33697205781936646,0.4604296732242242,2,0
+"I signed a contract under threat, is it valid?","Indian Contract Act, 1872",22,0.3431517803398437,0.30946990847587585,0.534015710968221,2,0
+The other party isn't fulfilling their side of the agreement,"Indian Contract Act, 1872",53,0.5980975749772135,0.6207225322723389,0.46988932469245004,3,0
+The other party isn't fulfilling their side of the agreement,"Indian Contract Act, 1872",19,0.5916019663090372,0.5754916667938232,0.6828935840890564,3,0
+The other party isn't fulfilling their side of the agreement,"Indian Contract Act, 1872",37,0.5327280357164472,0.4941927492618561,0.7510945496839487,4,1
+The other party isn't fulfilling their side of the agreement,"Specific Relief Act, 1963",42,0.529773086251615,0.47337037324905396,0.8493884400645795,2,0
+The other party isn't fulfilling their side of the agreement,"Specific Relief Act, 1963",20,0.5243770015575736,0.534735381603241,0.4656794550274806,3,0
+The other party isn't fulfilling their side of the agreement,"Indian Contract Act, 1872",64,0.518783729844631,0.5303311944007874,0.4533480377550996,3,0
+The other party isn't fulfilling their side of the agreement,"Indian Contract Act, 1872",132,0.5020609160859614,0.538468599319458,0.2957506713597174,3,0
+The other party isn't fulfilling their side of the agreement,"Motor Vehicles Act, 1988",153,0.4896288903842939,0.45511311292648315,0.6852182363739103,3,0
+The other party isn't fulfilling their side of the agreement,"Indian Contract Act, 1872",25,0.47285885801651967,0.39364859461784363,0.9217169676051465,3,0
+The other party isn't fulfilling their side of the agreement,"Indian Contract Act, 1872",36,0.46804332389099657,0.41286617517471313,0.7807137339421947,1,0
+Can a minor enter into a valid contract?,"Indian Contract Act, 1872",248,0.778361576795578,0.28138914704322815,1.0,1,0
+Can a minor enter into a valid contract?,"Indian Contract Act, 1872",11,0.7264456942837916,0.3365268111228943,0.5145004044511194,2,1
+Can a minor enter into a valid contract?,"Indian Contract Act, 1872",26,0.7009277484433881,0.26223883032798767,0.8504057399488264,1,0
+Can a minor enter into a valid contract?,"Indian Contract Act, 1872",247,0.43124833553853503,0.08010426163673401,0.9835703124543983,1,0
+Can a minor enter into a valid contract?,"Bharatiya Nyaya Sanhita, 2023",357,0.4188844666411896,0.4518859386444092,0.23187604581675245,1,0
+Can a minor enter into a valid contract?,"Bharatiya Nyaya Sanhita, 2023",95,0.38704437891123233,0.41038236021995544,0.254795808227694,1,0
+Can a minor enter into a valid contract?,"Indian Contract Act, 1872",10,0.3840446284361044,0.15531253814697266,0.40004435875262134,2,0
+Can a minor enter into a valid contract?,"Bharatiya Nagarik Suraksha Sanhita, 2023",300,0.3810164735783189,0.414449542760849,0.19156244467963734,1,0
+Can a minor enter into a valid contract?,"Bharatiya Nyaya Sanhita, 2023",99,0.36741322395414666,0.3859442472457886,0.262404091968176,1,0
+Can a minor enter into a valid contract?,"Bharatiya Nyaya Sanhita, 2023",20,0.36193659851156307,0.37827685475349426,0.26934166412900784,1,0
+Someone hacked my computer and stole data,"Information Technology Act, 2000",5,1.0346599821155196,0.4874108135700226,0.686872006755711,3,0
+Someone hacked my computer and stole data,"Information Technology Act, 2000",43,0.9858365996969494,0.5081678628921509,0.40650399005835347,2,1
+Someone hacked my computer and stole data,"Information Technology Act, 2000",29,0.5439593598906951,0.4701242446899414,0.9623581870825805,3,0
+Someone hacked my computer and stole data,"Information Technology Act, 2000",66B,0.5107984336950424,0.5505704283714294,0.28542365811801124,1,0
+Someone hacked my computer and stole data,"Information Technology Act, 2000",66F,0.4651081204414368,0.3707154393196106,1.0,4,0
+Someone hacked my computer and stole data,"Bharatiya Nyaya Sanhita, 2023",303,0.4479035650784272,0.5047218799591064,0.125933034615052,1,0
+Someone hacked my computer and stole data,"Information Technology Act, 2000",69B,0.4406392858087184,0.3523936867713928,0.9406975810124889,3,0
+Someone hacked my computer and stole data,"Information Technology Act, 2000",43A,0.439292625010278,0.3814324736595154,0.7671667166568582,2,0
+Someone hacked my computer and stole data,"Information Technology Act, 2000",72,0.4260731376385155,0.4726436734199524,0.16217333553596505,2,0
+Someone hacked my computer and stole data,"Bharatiya Nagarik Suraksha Sanhita, 2023",499,0.4201523077525829,0.4780956506729126,0.09180665813428464,2,0
+I'm being blackmailed with private photos online,"Information Technology Act, 2000",66E,0.6070619761943817,0.5377199649810791,1.0,4,1
+I'm being blackmailed with private photos online,"Bharatiya Nyaya Sanhita, 2023",308,0.5113366243068075,0.5317578315734863,0.3956162908499081,1,0
+I'm being blackmailed with private photos online,"Information Technology Act, 2000",72,0.41162718382890096,0.4177285134792328,0.37705289307005346,2,0
+I'm being blackmailed with private photos online,"Bharatiya Nyaya Sanhita, 2023",351,0.4006950855255127,0.4714059829711914,0.0,0,0
+I'm being blackmailed with private photos online,"Bharatiya Nyaya Sanhita, 2023",143,0.38109076023101807,0.44834205508232117,0.0,0,0
+I'm being blackmailed with private photos online,"Bharatiya Nyaya Sanhita, 2023",309,0.3708748529632206,0.3751116096973419,0.3468664555280177,2,0
+I'm being blackmailed with private photos online,"Bharatiya Nyaya Sanhita, 2023",323,0.36781755089759827,0.43272650241851807,0.0,0,0
+I'm being blackmailed with private photos online,"Bharatiya Nyaya Sanhita, 2023",303,0.3613695502281189,0.4251406490802765,0.0,0,0
+I'm being blackmailed with private photos online,"Bharatiya Nyaya Sanhita, 2023",119,0.3571918308734894,0.42022567987442017,0.0,0,0
+I'm being blackmailed with private photos online,"Bharatiya Nyaya Sanhita, 2023",120,0.3515106737613678,0.4135419428348541,0.0,0,0
+Someone created a fake account impersonating me online,"Bharatiya Nyaya Sanhita, 2023",319,0.6987959384918213,0.6456422805786133,1.0,3,0
+Someone created a fake account impersonating me online,"Bharatiya Nyaya Sanhita, 2023",242,0.5252323288740327,0.5422862768173218,0.4285932507922983,1,0
+Someone created a fake account impersonating me online,"Bharatiya Nyaya Sanhita, 2023",344,0.5167737182329957,0.5570513606071472,0.2885336851748256,2,0
+Someone created a fake account impersonating me online,"Indian Contract Act, 1872",235,0.484843991229274,0.5278612971305847,0.24107907897457903,2,0
+Someone created a fake account impersonating me online,"Information Technology Act, 2000",66C,0.47630088826422723,0.43838953971862793,0.6911317044102373,2,1
+Someone created a fake account impersonating me online,"Information Technology Act, 2000",66D,0.4626151134619464,0.37813901901245117,0.9413129820090861,3,1
+Someone created a fake account impersonating me online,"Bharatiya Nyaya Sanhita, 2023",318,0.4229992449907511,0.4373817443847656,0.34149833561847565,2,0
+Someone created a fake account impersonating me online,"Bharatiya Nyaya Sanhita, 2023",172,0.4159912343435288,0.3961077332496643,0.5286643078676861,2,0
+Someone created a fake account impersonating me online,"Bharatiya Nyaya Sanhita, 2023",72,0.4078198793906333,0.388449490070343,0.5175853592676334,2,0
+Someone created a fake account impersonating me online,"Bharatiya Nyaya Sanhita, 2023",174,0.40115738606091295,0.38263610005378723,0.5061112308261099,1,0
+"I was in an accident, how do I claim compensation?","Motor Vehicles Act, 1988",166,0.7354058137388464,0.7101908922195435,0.8782904087513259,4,1
+"I was in an accident, how do I claim compensation?","Motor Vehicles Act, 1988",160,0.715326452255249,0.6650899052619934,1.0,4,0
+"I was in an accident, how do I claim compensation?","Motor Vehicles Act, 1988",167,0.6435275481189497,0.6493614315986633,0.6104686565168755,2,0
+"I was in an accident, how do I claim compensation?","Motor Vehicles Act, 1988",164,0.641821485853953,0.5860203504562378,0.9580279197743398,4,1
+"I was in an accident, how do I claim compensation?","Motor Vehicles Act, 1988",149,0.6209824693466967,0.5871509313583374,0.8126944384745396,3,0
+"I was in an accident, how do I claim compensation?","Motor Vehicles Act, 1988",163,0.583782729475044,0.5595600605010986,0.7210445203274007,3,0
+"I was in an accident, how do I claim compensation?","Bharatiya Nagarik Suraksha Sanhita, 2023",395,0.5701819762269065,0.616085410118103,0.3100622393551173,1,0
+"I was in an accident, how do I claim compensation?","Motor Vehicles Act, 1988",172,0.5698666776063734,0.538913905620575,0.7452656195181573,3,0
+"I was in an accident, how do I claim compensation?","Specific Relief Act, 1963",21,0.569315253682003,0.567357063293457,0.5804115466744739,2,0
+"I was in an accident, how do I claim compensation?","Motor Vehicles Act, 1988",161,0.5680610555024709,0.5613585710525513,0.606041760982252,2,0
+"Can I drive without insurance, what happens if caught?","Motor Vehicles Act, 1988",152,0.47436877611111977,0.43903684616088867,0.6745828868833765,1,0
+"Can I drive without insurance, what happens if caught?","Motor Vehicles Act, 1988",146,0.47300358540143966,0.43073341250419617,0.7125345154819489,1,1
+"Can I drive without insurance, what happens if caught?","Motor Vehicles Act, 1988",186,0.45344682108436535,0.4069531559944153,0.7169108636561043,1,0
+"Can I drive without insurance, what happens if caught?","Motor Vehicles Act, 1988",205,0.44460591514637937,0.4023762345314026,0.6839074584994629,1,0
+"Can I drive without insurance, what happens if caught?","Motor Vehicles Act, 1988",154,0.436270985749486,0.37358689308166504,0.7914807647276114,1,0
+"Can I drive without insurance, what happens if caught?","Motor Vehicles Act, 1988",197,0.43211221979353975,0.4570580720901489,0.2907522709034649,1,0
+"Can I drive without insurance, what happens if caught?","Motor Vehicles Act, 1988",196,0.4211057722568512,0.4954185485839844,0.0,0,1
+"Can I drive without insurance, what happens if caught?","Motor Vehicles Act, 1988",147,0.4153579451639347,0.35156455636024475,0.776853745512759,1,0
+"Can I drive without insurance, what happens if caught?","Motor Vehicles Act, 1988",162,0.4032251538585106,0.3278159499168396,0.8305438371171417,1,0
+"Can I drive without insurance, what happens if caught?","Motor Vehicles Act, 1988",207,0.4022083640642368,0.41834962368011475,0.31074110703163915,1,0
+"My driving licence was suspended, can I appeal?","Motor Vehicles Act, 1988",23,4.251333762645946,0.6968202590942383,0.775055807431789,5,0
+"My driving licence was suspended, can I appeal?","Motor Vehicles Act, 1988",24,3.8143194578915027,0.6096291542053223,0.7835675238270662,5,0
+"My driving licence was suspended, can I appeal?","Motor Vehicles Act, 1988",19,3.614043653701125,0.537956953048706,0.9671813257252488,5,0
+"My driving licence was suspended, can I appeal?","Motor Vehicles Act, 1988",17,3.462598954969609,0.5501022934913635,0.7300857430629865,4,1
+"My driving licence was suspended, can I appeal?","Motor Vehicles Act, 1988",34,3.3877528301571784,0.5710984468460083,0.5279451599490835,3,0
+"My driving licence was suspended, can I appeal?","Motor Vehicles Act, 1988",35,3.178026579794843,0.5355993509292603,0.49607749667163153,4,0
+"My driving licence was suspended, can I appeal?","Motor Vehicles Act, 1988",86,3.1730320484979884,0.5848572254180908,0.21140006201619777,3,0
+"My driving licence was suspended, can I appeal?","Motor Vehicles Act, 1988",33,2.7340978426188114,0.46223360300064087,0.4185627613299298,3,0
+"My driving licence was suspended, can I appeal?","Motor Vehicles Act, 1988",89,2.44818815724794,0.4521161913871765,0.1582172528101775,2,0
+"My driving licence was suspended, can I appeal?","Motor Vehicles Act, 1988",57,2.029095415307443,0.38177770376205444,0.09114345359952458,1,0
+"My husband is abusive, how do I get protection?","Bharatiya Nyaya Sanhita, 2023",85,0.40343754887580874,0.2981618046760559,1.0,1,0
+"My husband is abusive, how do I get protection?","Protection of Women from Domestic Violence Act, 2005",18,0.4001240952786601,0.3983086347579956,0.4104117048957592,1,1
+"My husband is abusive, how do I get protection?","Protection of Women from Domestic Violence Act, 2005",5,0.3884789233502775,0.3864663243293762,0.3998835120578802,1,0
+"My husband is abusive, how do I get protection?","Protection of Women from Domestic Violence Act, 2005",3,0.3695604642483734,0.3992888033390045,0.20109980652937817,1,0
+"My husband is abusive, how do I get protection?","Bharatiya Nagarik Suraksha Sanhita, 2023",221,0.3692066311531673,0.32161808013916016,0.6388751266356376,1,0
+"My husband is abusive, how do I get protection?","Protection of Women from Domestic Violence Act, 2005",9,0.3676692003801739,0.30043894052505493,0.7486405338150106,2,0
+"My husband is abusive, how do I get protection?","Bharatiya Nyaya Sanhita, 2023",225,0.33949039053187136,0.3176136612892151,0.46345854277513826,1,0
+"My husband is abusive, how do I get protection?","Protection of Women from Domestic Violence Act, 2005",19,0.3328930332993253,0.3415089249610901,0.28406950813848697,1,0
+"My husband is abusive, how do I get protection?","Protection of Women from Domestic Violence Act, 2005",31,0.3209162406172321,0.3002687692642212,0.4379185385478641,1,0
+"My husband is abusive, how do I get protection?","Protection of Women from Domestic Violence Act, 2005",4,0.3141960557407818,0.28954264521598816,0.4538986458425269,1,0
+Can I stay in my shared house during a domestic violence case?,"Protection of Women from Domestic Violence Act, 2005",17,0.8166674017906189,0.7843145728111267,1.0,2,1
+Can I stay in my shared house during a domestic violence case?,"Protection of Women from Domestic Violence Act, 2005",19,0.6635222255530551,0.6276023387908936,0.867068250538637,3,1
+Can I stay in my shared house during a domestic violence case?,"Protection of Women from Domestic Violence Act, 2005",3,0.6084148654492836,0.5648913383483887,0.8550481459512583,5,0
+Can I stay in my shared house during a domestic violence case?,"Protection of Women from Domestic Violence Act, 2005",18,0.5515184059628792,0.5410906076431274,0.6106092233717092,2,0
+Can I stay in my shared house during a domestic violence case?,"Protection of Women from Domestic Violence Act, 2005",2,0.5076638765325424,0.43163245916366577,0.9385085153515319,5,0
+Can I stay in my shared house during a domestic violence case?,"Protection of Women from Domestic Violence Act, 2005",23,0.4751760601735333,0.4475560486316681,0.6316893893720172,3,0
+Can I stay in my shared house during a domestic violence case?,"Protection of Women from Domestic Violence Act, 2005",4,0.4729702214015961,0.45835423469543457,0.5557940665969852,2,0
+Can I stay in my shared house during a domestic violence case?,"Protection of Women from Domestic Violence Act, 2005",5,0.45358561092719557,0.430972158908844,0.5817285255660694,2,0
+Can I stay in my shared house during a domestic violence case?,"Protection of Women from Domestic Violence Act, 2005",27,0.447126445665363,0.44675788283348083,0.4492149584452548,1,0
+Can I stay in my shared house during a domestic violence case?,"Protection of Women from Domestic Violence Act, 2005",6,0.44327438026174554,0.4392932057380676,0.4658343493610388,0,0
+How do I get monetary support after facing domestic violence?,"Protection of Women from Domestic Violence Act, 2005",20,0.6730939369255967,0.6164239645004272,0.9942235025132148,3,1
+How do I get monetary support after facing domestic violence?,"Protection of Women from Domestic Violence Act, 2005",5,0.6569783922969119,0.6023998260498047,0.9662570138367127,3,0
+How do I get monetary support after facing domestic violence?,"Protection of Women from Domestic Violence Act, 2005",3,0.5788915901588915,0.5747388005256653,0.602424044878958,2,0
+How do I get monetary support after facing domestic violence?,"Protection of Women from Domestic Violence Act, 2005",18,0.5720950285547801,0.5319098234176636,0.7998110320527213,3,0
+How do I get monetary support after facing domestic violence?,"Protection of Women from Domestic Violence Act, 2005",22,0.5704056570327546,0.5511797070503235,0.6793526473285526,2,0
+How do I get monetary support after facing domestic violence?,"Protection of Women from Domestic Violence Act, 2005",4,0.5273965546940111,0.5040857791900635,0.6594907902706619,2,0
+How do I get monetary support after facing domestic violence?,"Protection of Women from Domestic Violence Act, 2005",2,0.49657687068885203,0.44825321435928345,0.7704108636184295,3,0
+How do I get monetary support after facing domestic violence?,"Protection of Women from Domestic Violence Act, 2005",9,0.4916722416877747,0.401967316865921,1.0,4,0
+How do I get monetary support after facing domestic violence?,"Protection of Women from Domestic Violence Act, 2005",15,0.4836780272830732,0.4745755195617676,0.535258745424752,0,0
+How do I get monetary support after facing domestic violence?,"Protection of Women from Domestic Violence Act, 2005",12,0.4605805059439055,0.442476749420166,0.5631683801055695,3,0
+How do I file an RTI request?,"Right to Information Act, 2005",6,0.6247964866794177,0.2179221361875534,0.8477628455682026,1,1
+How do I file an RTI request?,"Right to Information Act, 2005",7,0.5622345870695358,0.17934946715831757,0.8578016579024808,1,0
+How do I file an RTI request?,"Right to Information Act, 2005",9,0.4574063472623197,0.12229575216770172,0.8316785271547132,1,0
+How do I file an RTI request?,"Bharatiya Nagarik Suraksha Sanhita, 2023",123,0.4281026589395167,0.33583950996398926,0.9509270505915496,1,0
+How do I file an RTI request?,"Bharatiya Nagarik Suraksha Sanhita, 2023",113,0.39042744357661785,0.31607115268707275,0.8117797188809436,1,0
+How do I file an RTI request?,"Right to Information Act, 2005",20,0.36829823125223404,0.09326980262994766,0.699131881820496,1,0
+How do I file an RTI request?,"Motor Vehicles Act, 1988",78,0.34489840269088745,0.40576282143592834,0.0,0,0
+How do I file an RTI request?,"Right to Information Act, 2005",23,0.30818918347358704,0.1812877506017685,0.0,0,0
+How do I file an RTI request?,"Bharatiya Nagarik Suraksha Sanhita, 2023",112,0.30331521951524676,0.20396193861961365,0.8663171346563936,1,0
+How do I file an RTI request?,"Right to Information Act, 2005",18,0.3013460040092468,0.1772623509168625,0.0,0,0
+"My RTI request was rejected, can I appeal?","Right to Information Act, 2005",19,1.1044865858360349,0.4765329957008362,0.98126829061383,3,1
+"My RTI request was rejected, can I appeal?","Right to Information Act, 2005",20,0.9855176617166121,0.4033694565296173,0.999298628654983,3,0
+"My RTI request was rejected, can I appeal?","Right to Information Act, 2005",7,0.8032054781913758,0.29600322246551514,1.0,3,0
+"My RTI request was rejected, can I appeal?","Right to Information Act, 2005",23,0.7512831725331386,0.3770436942577362,0.36769629771584944,1,0
+"My RTI request was rejected, can I appeal?","Right to Information Act, 2005",9,0.6830072156835043,0.28992220759391785,0.6337981595756091,1,0
+"My RTI request was rejected, can I appeal?","Bharatiya Nagarik Suraksha Sanhita, 2023",423,0.6079919058301609,0.6240658760070801,0.5169059953547596,1,0
+"My RTI request was rejected, can I appeal?","Bharatiya Nagarik Suraksha Sanhita, 2023",89,0.6051330733990281,0.6222947835922241,0.5078833425678205,1,0
+"My RTI request was rejected, can I appeal?","Right to Information Act, 2005",6,0.5976218623650809,0.23753246665000916,0.6460555535994437,1,0
+"My RTI request was rejected, can I appeal?","Bharatiya Nagarik Suraksha Sanhita, 2023",380,0.5815991333181489,0.6040099859237671,0.4546043416227424,1,0
+"My RTI request was rejected, can I appeal?","Bharatiya Nagarik Suraksha Sanhita, 2023",500,0.5799488181859738,0.5487056970596313,0.7569931314988178,2,0
+What information can be denied to me under RTI?,"Right to Information Act, 2005",8,1.037048302426271,0.5219256281852722,0.4992489759601898,3,1
+What information can be denied to me under RTI?,"Right to Information Act, 2005",10,0.9498392361470437,0.47167202830314636,0.49332261683820877,3,0
+What information can be denied to me under RTI?,"Right to Information Act, 2005",20,0.7647520482540131,0.27338355779647827,1.0,4,0
+What information can be denied to me under RTI?,"Right to Information Act, 2005",11,0.6945608500722078,0.32876574993133545,0.4521968775600286,3,0
+What information can be denied to me under RTI?,"Right to Information Act, 2005",9,0.6406382346843776,0.2982538342475891,0.44535558246741613,2,0
+What information can be denied to me under RTI?,"Right to Information Act, 2005",24,0.5822546075205688,0.2503598928451538,0.522142612411143,3,0
+What information can be denied to me under RTI?,"Right to Information Act, 2005",3,0.5688680473624925,0.2802036702632904,0.308405976712459,1,0
+What information can be denied to me under RTI?,"Right to Information Act, 2005",6,0.5364074379435295,0.22244368493556976,0.5275105338067195,3,0
+What information can be denied to me under RTI?,"Right to Information Act, 2005",18,0.49894096848712977,0.20721057057380676,0.48894333830630166,2,0
+What information can be denied to me under RTI?,"Right to Information Act, 2005",7,0.4977061503200652,0.19707456231117249,0.5422645982997026,3,0
+"The other party won't complete the property sale we agreed to, what can I do?","Specific Relief Act, 1963",10,1.901472903620126,0.34480994939804077,0.5813740986332923,3,1
+"The other party won't complete the property sale we agreed to, what can I do?","Specific Relief Act, 1963",20,1.5445113778114319,0.5503582954406738,1.0,5,0
+"The other party won't complete the property sale we agreed to, what can I do?","Specific Relief Act, 1963",12,1.455091872831731,0.5374951362609863,0.8344391028630707,5,0
+"The other party won't complete the property sale we agreed to, what can I do?","Specific Relief Act, 1963",28,1.2403394922305897,0.4291687607765198,0.8756156483464125,5,0
+"The other party won't complete the property sale we agreed to, what can I do?","Specific Relief Act, 1963",18,1.2318371954330545,0.4105084240436554,0.9586846756322496,5,0
+"The other party won't complete the property sale we agreed to, what can I do?","Specific Relief Act, 1963",19,1.2128061347163948,0.4654593765735626,0.5965464096485857,5,0
+"The other party won't complete the property sale we agreed to, what can I do?","Specific Relief Act, 1963",23,1.2089309010324285,0.4163346588611603,0.8645860124740087,5,0
+"The other party won't complete the property sale we agreed to, what can I do?","Specific Relief Act, 1963",24,1.1243574973666988,0.3930305242538452,0.7711136093998809,5,0
+"The other party won't complete the property sale we agreed to, what can I do?","Specific Relief Act, 1963",21,1.082439305371241,0.39136964082717896,0.6687435361708435,4,0
+"The other party won't complete the property sale we agreed to, what can I do?","Specific Relief Act, 1963",14,1.0035896539967768,0.3494550883769989,0.6959935665876369,4,0
+How do I stop someone from doing something harmful through a court order?,"Specific Relief Act, 1963",41,1.9100434184074402,0.722373366355896,1.0,5,0
+How do I stop someone from doing something harmful through a court order?,"Specific Relief Act, 1963",38,1.6318821087928927,0.6060986518859863,0.9171265166209321,4,1
+How do I stop someone from doing something harmful through a court order?,"Specific Relief Act, 1963",37,1.5199399068685708,0.5929456353187561,0.693147599626207,5,0
+How do I stop someone from doing something harmful through a court order?,"Specific Relief Act, 1963",39,1.4157460993474449,0.5522268414497375,0.6460373576338362,3,0
+How do I stop someone from doing something harmful through a court order?,"Specific Relief Act, 1963",40,1.2527208380801231,0.4397065341472626,0.8489184519722062,4,0
+How do I stop someone from doing something harmful through a court order?,"Specific Relief Act, 1963",36,1.1127598088904436,0.3950086236000061,0.7289771906334067,3,1
+How do I stop someone from doing something harmful through a court order?,"Specific Relief Act, 1963",42,0.9533972682662655,0.3271443843841553,0.6885744179905384,3,0
+How do I stop someone from doing something harmful through a court order?,"Bharatiya Nagarik Suraksha Sanhita, 2023",161,0.632417658941057,0.6094479560852051,0.7625793084575512,3,0
+How do I stop someone from doing something harmful through a court order?,"Bharatiya Nyaya Sanhita, 2023",293,0.4894179634926782,0.4654143750667572,0.6254382482356932,1,0
+How do I stop someone from doing something harmful through a court order?,"Specific Relief Act, 1963",20A,0.47706411047126474,0.14636170864105225,0.4427879257558616,3,0
+"I was wrongfully dispossessed of my property, what's my remedy?","Specific Relief Act, 1963",6,0.6001567780971527,0.529596209526062,1.0,3,1
+"I was wrongfully dispossessed of my property, what's my remedy?","Bharatiya Nyaya Sanhita, 2023",315,0.5223200733337184,0.5175100564956665,0.5495767559431533,3,0
+"I was wrongfully dispossessed of my property, what's my remedy?","Bharatiya Nyaya Sanhita, 2023",314,0.5184006379179931,0.5172580480575562,0.5248753137938025,3,0
+"I was wrongfully dispossessed of my property, what's my remedy?","Bharatiya Nagarik Suraksha Sanhita, 2023",502,0.51683411556214,0.5062679052352905,0.5767091484685678,2,0
+"I was wrongfully dispossessed of my property, what's my remedy?","Bharatiya Nyaya Sanhita, 2023",317,0.4887942555906651,0.5332808494567871,0.236703477543114,1,0
+"I was wrongfully dispossessed of my property, what's my remedy?","Bharatiya Nagarik Suraksha Sanhita, 2023",498,0.4704943462547886,0.5136747360229492,0.2258053516925889,1,0
+"I was wrongfully dispossessed of my property, what's my remedy?","Transfer of Property Act, 1882",114A,0.45876196710128847,0.37065964937210083,0.9580084143651371,2,0
+"I was wrongfully dispossessed of my property, what's my remedy?","Transfer of Property Act, 1882",66,0.4503427568118778,0.49110162258148193,0.2193757713112612,1,0
+"I was wrongfully dispossessed of my property, what's my remedy?","Bharatiya Nagarik Suraksha Sanhita, 2023",119,0.4493097552882823,0.49323976039886475,0.2003730596616485,1,0
+"I was wrongfully dispossessed of my property, what's my remedy?","Bharatiya Nyaya Sanhita, 2023",316,0.44315903181244737,0.48235422372817993,0.22105288468531792,1,0
+"Someone attacked me, can I defend myself legally?","Bharatiya Nyaya Sanhita, 2023",44,0.7565710783004761,0.7136130332946777,1.0,5,0
+"Someone attacked me, can I defend myself legally?","Bharatiya Nyaya Sanhita, 2023",35,0.636880166563513,0.6082396507263184,0.799176343501423,4,1
+"Someone attacked me, can I defend myself legally?","Bharatiya Nyaya Sanhita, 2023",37,0.601020879010461,0.6080297231674194,0.5613041351907927,3,0
+"Someone attacked me, can I defend myself legally?","Bharatiya Nyaya Sanhita, 2023",34,0.5841007042418932,0.5985350608825684,0.50230609608426,2,1
+"Someone attacked me, can I defend myself legally?","Bharatiya Nyaya Sanhita, 2023",38,0.5834107030669052,0.5678144693374634,0.6717892019213566,4,0
+"Someone attacked me, can I defend myself legally?","Bharatiya Nyaya Sanhita, 2023",36,0.559357354433885,0.5651752948760986,0.5263889457884817,3,0
+"Someone attacked me, can I defend myself legally?","Bharatiya Nyaya Sanhita, 2023",40,0.5373509837052075,0.5501335859298706,0.46491623776544977,2,0
+"Someone attacked me, can I defend myself legally?","Bharatiya Nyaya Sanhita, 2023",41,0.49992111087007485,0.4966009259223938,0.5187354326356226,3,0
+"Someone attacked me, can I defend myself legally?","Bharatiya Nyaya Sanhita, 2023",43,0.49877403901803213,0.4831070303916931,0.5875536949626419,4,0
+"Someone attacked me, can I defend myself legally?","Bharatiya Nagarik Suraksha Sanhita, 2023",340,0.49449336931310184,0.5679910182952881,0.07800661227451997,1,0
+I'm facing dowry harassment demands,"Bharatiya Nyaya Sanhita, 2023",80,0.5062763333320618,0.41914862394332886,1.0,2,1
+I'm facing dowry harassment demands,"Bharatiya Nyaya Sanhita, 2023",86,0.4338667205979729,0.41267746686935425,0.553939019315974,1,0
+I'm facing dowry harassment demands,"Bharatiya Nyaya Sanhita, 2023",75,0.3965143698029496,0.36214524507522583,0.5912726041825465,1,0
+I'm facing dowry harassment demands,"Bharatiya Nyaya Sanhita, 2023",351,0.34369775652885437,0.40435028076171875,0.0,0,0
+I'm facing dowry harassment demands,"Protection of Women from Domestic Violence Act, 2005",31,0.32264277534390234,0.3227884769439697,0.32181701373423105,1,0
+I'm facing dowry harassment demands,"Indian Contract Act, 1872",15,0.31339389085769653,0.36869868636131287,0.0,0,0
+I'm facing dowry harassment demands,"Protection of Women from Domestic Violence Act, 2005",22,0.3118295669555664,0.3668583035469055,0.0,0,0
+I'm facing dowry harassment demands,"Bharatiya Nyaya Sanhita, 2023",143,0.30492687225341797,0.3587374985218048,0.0,0,0
+I'm facing dowry harassment demands,"Bharatiya Nyaya Sanhita, 2023",146,0.30391037464141846,0.35754162073135376,0.0,0,0
+I'm facing dowry harassment demands,"Protection of Women from Domestic Violence Act, 2005",2,0.2992831274730378,0.29413121938705444,0.3284772931618251,2,0
+Someone assaulted a woman inappropriately in public,"Bharatiya Nyaya Sanhita, 2023",74,0.550204435750695,0.5200708508491516,0.7209613572547959,1,1
+Someone assaulted a woman inappropriately in public,"Bharatiya Nyaya Sanhita, 2023",76,0.5374275557793687,0.502562940120697,0.7349936913102935,1,0
+Someone assaulted a woman inappropriately in public,"Bharatiya Nyaya Sanhita, 2023",86,0.5212995804993827,0.486065149307251,0.7209613572547959,1,0
+Someone assaulted a woman inappropriately in public,"Bharatiya Nyaya Sanhita, 2023",79,0.4887581825611477,0.43583083152770996,0.7886797589444354,1,0
+Someone assaulted a woman inappropriately in public,"Bharatiya Nyaya Sanhita, 2023",87,0.4561134410336475,0.4163731634616852,0.6813081982631555,1,0
+Someone assaulted a woman inappropriately in public,"Bharatiya Nyaya Sanhita, 2023",63,0.45197882198434697,0.41625744104385376,0.6543999210424971,1,0
+Someone assaulted a woman inappropriately in public,"Bharatiya Nagarik Suraksha Sanhita, 2023",359,0.4497357489171466,0.3761889338493347,0.8665010541696292,3,0
+Someone assaulted a woman inappropriately in public,"Bharatiya Nyaya Sanhita, 2023",85,0.43888738118927684,0.3745184540748596,0.803644614969426,1,0
+Someone assaulted a woman inappropriately in public,"Bharatiya Nyaya Sanhita, 2023",84,0.4343609939852976,0.37567371129989624,0.7669221234584007,1,0
+Someone assaulted a woman inappropriately in public,"Bharatiya Nyaya Sanhita, 2023",77,0.42909256223766523,0.42742976546287537,0.4385149878878409,1,0
+"Police arrested me, what are my rights?","Bharatiya Nagarik Suraksha Sanhita, 2023",58,0.6530582916648023,0.6110870838165283,0.8908951361383554,4,1
+"Police arrested me, what are my rights?","Bharatiya Nagarik Suraksha Sanhita, 2023",49,0.6499928487606784,0.5950981974601746,0.9610622811767399,4,0
+"Police arrested me, what are my rights?","Bharatiya Nagarik Suraksha Sanhita, 2023",43,0.6329606710632593,0.5800821185112,0.9326056233776612,4,0
+"Police arrested me, what are my rights?","Bharatiya Nagarik Suraksha Sanhita, 2023",47,0.6160495512636842,0.5701305270195007,0.8762571765001232,3,1
+"Police arrested me, what are my rights?","Bharatiya Nagarik Suraksha Sanhita, 2023",56,0.6142339605359668,0.6054867506027222,0.6638013642817304,2,0
+"Police arrested me, what are my rights?","Bharatiya Nagarik Suraksha Sanhita, 2023",82,0.6000164027900275,0.5521320104598999,0.8713612131878913,3,0
+"Police arrested me, what are my rights?","Bharatiya Nagarik Suraksha Sanhita, 2023",48,0.5906642096550343,0.5362380743026733,0.8990788574424569,3,0
+"Police arrested me, what are my rights?","Bharatiya Nagarik Suraksha Sanhita, 2023",36,0.5892839411975671,0.5470290184020996,0.8287284639687867,3,0
+"Police arrested me, what are my rights?","Bharatiya Nagarik Suraksha Sanhita, 2023",44,0.5889684791776274,0.5547412633895874,0.7829226622400909,3,0
+"Police arrested me, what are my rights?","Bharatiya Nagarik Suraksha Sanhita, 2023",83,0.5806458949923519,0.5476899147033691,0.7673963307539641,4,0
+Can police arrest someone without a warrant?,"Bharatiya Nagarik Suraksha Sanhita, 2023",35,0.7982666344235901,0.7999964356422424,0.7884644473861089,5,1
+Can police arrest someone without a warrant?,"Bharatiya Nagarik Suraksha Sanhita, 2023",82,0.7458700339130688,0.7353243827819824,0.8056285647101726,4,0
+Can police arrest someone without a warrant?,"Motor Vehicles Act, 1988",202,0.7205534464800021,0.6879245042800903,0.9054505074578268,5,0
+Can police arrest someone without a warrant?,"Bharatiya Nagarik Suraksha Sanhita, 2023",49,0.7178394591742027,0.703978955745697,0.7963822920675198,5,0
+Can police arrest someone without a warrant?,"Bharatiya Nagarik Suraksha Sanhita, 2023",58,0.6971458486572386,0.698273241519928,0.6907572294973537,5,0
+Can police arrest someone without a warrant?,"Bharatiya Nagarik Suraksha Sanhita, 2023",55,0.6952262602414683,0.658238410949707,0.9048239934219224,5,0
+Can police arrest someone without a warrant?,"Bharatiya Nagarik Suraksha Sanhita, 2023",78,0.6563682200268589,0.64401775598526,0.726353884906029,5,0
+Can police arrest someone without a warrant?,"Bharatiya Nagarik Suraksha Sanhita, 2023",47,0.6523673475296338,0.6236501336097717,0.8150982462770671,5,0
+Can police arrest someone without a warrant?,"Bharatiya Nagarik Suraksha Sanhita, 2023",57,0.6407607165435361,0.6289262771606445,0.7078226191861141,5,0
+Can police arrest someone without a warrant?,"Bharatiya Nagarik Suraksha Sanhita, 2023",170,0.6357793152332306,0.571505069732666,1.0,5,0
+How do I file an FIR for a cognizable offence?,"Bharatiya Nagarik Suraksha Sanhita, 2023",169,0.6922090888023377,0.63789302110672,1.0,4,0
+How do I file an FIR for a cognizable offence?,"Bharatiya Nagarik Suraksha Sanhita, 2023",173,0.5486278565196531,0.489360511302948,0.8844761262127667,5,1
+How do I file an FIR for a cognizable offence?,"Bharatiya Nagarik Suraksha Sanhita, 2023",210,0.5123420736082732,0.5089290738105774,0.5316822269812816,5,0
+How do I file an FIR for a cognizable offence?,"Bharatiya Nagarik Suraksha Sanhita, 2023",168,0.4946107553152727,0.44266021251678467,0.7889970055609855,3,0
+How do I file an FIR for a cognizable offence?,"Bharatiya Nagarik Suraksha Sanhita, 2023",174,0.4843723000376297,0.3944277763366699,0.9940579343430685,5,0
+How do I file an FIR for a cognizable offence?,"Bharatiya Nagarik Suraksha Sanhita, 2023",33,0.47802116511379517,0.49088773131370544,0.40511045443447685,3,0
+How do I file an FIR for a cognizable offence?,"Consumer Protection Act, 2019",92,0.45131406233634613,0.5024344325065613,0.16163190510048236,1,0
+How do I file an FIR for a cognizable offence?,"Bharatiya Nagarik Suraksha Sanhita, 2023",515,0.43958285086978194,0.4424283504486084,0.4234581943107127,3,0
+How do I file an FIR for a cognizable offence?,"Protection of Women from Domestic Violence Act, 2005",32,0.43427679302502176,0.4221181571483612,0.5031756799888941,2,0
+How do I file an FIR for a cognizable offence?,"Bharatiya Nyaya Sanhita, 2023",240,0.4316860699403283,0.44345995783805847,0.3649673619190834,2,0
+"I lost my consumer case at the District Commission, can I appeal?","Consumer Protection Act, 2019",41,0.6478580804811259,0.5959215760231018,0.9421650384176707,3,0
+"I lost my consumer case at the District Commission, can I appeal?","Consumer Protection Act, 2019",73,0.6149737775325775,0.5470279455184937,1.0,4,0
+"I lost my consumer case at the District Commission, can I appeal?","Bharatiya Nagarik Suraksha Sanhita, 2023",380,0.5585488269390273,0.6032180786132812,0.30542306745158837,2,0
+"I lost my consumer case at the District Commission, can I appeal?","Bharatiya Nagarik Suraksha Sanhita, 2023",89,0.5573472940836817,0.6061486005783081,0.2808065970172284,1,0
+"I lost my consumer case at the District Commission, can I appeal?","Bharatiya Nagarik Suraksha Sanhita, 2023",500,0.5513558337218047,0.5854927897453308,0.35791294384431954,2,0
+"I lost my consumer case at the District Commission, can I appeal?","Consumer Protection Act, 2019",24,0.5278636537658185,0.4985111951828003,0.6941942524029217,2,1
+"I lost my consumer case at the District Commission, can I appeal?","Bharatiya Nagarik Suraksha Sanhita, 2023",419,0.5242802325001966,0.533910870552063,0.46970653740009427,3,0
+"I lost my consumer case at the District Commission, can I appeal?","Consumer Protection Act, 2019",52,0.5019164252750203,0.4446214437484741,0.8265879872587821,4,0
+"I lost my consumer case at the District Commission, can I appeal?","Consumer Protection Act, 2019",67,0.4961722100786801,0.46886253356933594,0.6509269641587708,2,0
+"I lost my consumer case at the District Commission, can I appeal?","Bharatiya Nagarik Suraksha Sanhita, 2023",495,0.4936759825857595,0.5146584510803223,0.374775168837518,2,0
+"My digital signature certificate was revoked, will I be notified?","Information Technology Act, 2000",39,0.7367655277252197,0.690312385559082,1.0,5,1
+"My digital signature certificate was revoked, will I be notified?","Information Technology Act, 2000",38,0.7222136929420416,0.6863325834274292,0.9255397815093629,5,0
+"My digital signature certificate was revoked, will I be notified?","Information Technology Act, 2000",37,0.6989754006248212,0.6737657785415649,0.8418298860268436,4,0
+"My digital signature certificate was revoked, will I be notified?","Information Technology Act, 2000",73,0.6084752662250381,0.6005032062530518,0.6536503522058206,4,0
+"My digital signature certificate was revoked, will I be notified?","Information Technology Act, 2000",36,0.6044131739899629,0.5820561051368713,0.7311031712195035,3,0
+"My digital signature certificate was revoked, will I be notified?","Information Technology Act, 2000",34,0.5512885104049666,0.5635610222816467,0.4817441770960384,4,0
+"My digital signature certificate was revoked, will I be notified?","Information Technology Act, 2000",41,0.5321981714262026,0.4779500961303711,0.8396038122266251,4,0
+"My digital signature certificate was revoked, will I be notified?","Information Technology Act, 2000",64,0.4212284577687439,0.42003554105758667,0.42798829926375326,3,0
+"My digital signature certificate was revoked, will I be notified?","Information Technology Act, 2000",35,0.4074984007843638,0.39779001474380493,0.462512449270026,3,0
+"My digital signature certificate was revoked, will I be notified?","Bharatiya Nyaya Sanhita, 2023",234,0.3847206564019796,0.4048721194267273,0.2705290127268612,2,0
+Can an RTI officer be punished for releasing information in good faith?,"Right to Information Act, 2005",21,1.0418583584149617,0.4390915632247925,0.9846756300396188,3,1
+Can an RTI officer be punished for releasing information in good faith?,"Right to Information Act, 2005",8,0.8977248119863765,0.46414098143577576,0.3622838018844182,2,0
+Can an RTI officer be punished for releasing information in good faith?,"Right to Information Act, 2005",10,0.7177697117538226,0.3331185579299927,0.5048937583668276,3,0
+Can an RTI officer be punished for releasing information in good faith?,"Right to Information Act, 2005",20,0.6993252479000457,0.308828204870224,0.5810576157316791,3,0
+Can an RTI officer be punished for releasing information in good faith?,"Right to Information Act, 2005",5,0.6932722532074589,0.3018873929977417,0.6002122837043269,3,0
+Can an RTI officer be punished for releasing information in good faith?,"Right to Information Act, 2005",11,0.682706805982987,0.3112362027168274,0.5120175180130532,3,0
+Can an RTI officer be punished for releasing information in good faith?,"Right to Information Act, 2005",17,0.6025238820663205,0.2897862195968628,0.3662909695675343,2,0
+Can an RTI officer be punished for releasing information in good faith?,"Right to Information Act, 2005",19,0.5661816766802328,0.23182052373886108,0.5736225416077035,3,0
+Can an RTI officer be punished for releasing information in good faith?,"Right to Information Act, 2005",7,0.5136235883460855,0.2003602385520935,0.57670392282354,3,0
+Can an RTI officer be punished for releasing information in good faith?,"Right to Information Act, 2005",4,0.48417805368297295,0.21534880995750427,0.39361691258327824,3,0
+How is the amount of rent payable decided under the Rent Act?,"Karnataka Rent Act, 1999",6,0.8530773162841797,0.8271497488021851,1.0,5,1
+How is the amount of rent payable decided under the Rent Act?,"Karnataka Rent Act, 1999",16,0.7116409166908972,0.6960785388946533,0.7998277242029465,4,0
+How is the amount of rent payable decided under the Rent Act?,"Karnataka Rent Act, 1999",8,0.6865287309509001,0.6662695407867432,0.8013307290749296,3,0
+How is the amount of rent payable decided under the Rent Act?,"Karnataka Rent Act, 1999",9,0.6657953522386544,0.6612544059753418,0.6915273015912327,4,0
+How is the amount of rent payable decided under the Rent Act?,"Karnataka Rent Act, 1999",12,0.6601469015636224,0.6043204069137573,0.9764969981764282,5,0
+How is the amount of rent payable decided under the Rent Act?,"Karnataka Rent Act, 1999",7,0.6429040802380745,0.636881947517395,0.6770295387250214,5,0
+How is the amount of rent payable decided under the Rent Act?,"Karnataka Rent Act, 1999",13,0.6424427273176915,0.6010722517967224,0.8768754815411609,4,0
+How is the amount of rent payable decided under the Rent Act?,"Karnataka Rent Act, 1999",17,0.6392756045508048,0.6171165704727173,0.7648431861716253,5,0
+How is the amount of rent payable decided under the Rent Act?,"Karnataka Rent Act, 1999",4,0.6307996449970573,0.6092520356178284,0.752902784680903,4,0
+How is the amount of rent payable decided under the Rent Act?,"Karnataka Rent Act, 1999",54,0.6131700096597894,0.6445440649986267,0.43538359673197025,4,0
+"I was dispossessed of my property without due process, how can I recover possession?","Specific Relief Act, 1963",6,0.6673526406288147,0.6086501479148865,1.0,5,1
+"I was dispossessed of my property without due process, how can I recover possession?","Bharatiya Nagarik Suraksha Sanhita, 2023",502,0.5924092017653528,0.6148408651351929,0.46529616451458405,3,0
+"I was dispossessed of my property without due process, how can I recover possession?","Bharatiya Nyaya Sanhita, 2023",317,0.583061152820883,0.6298528909683228,0.3179076918303819,3,0
+"I was dispossessed of my property without due process, how can I recover possession?","Specific Relief Act, 1963",7,0.570893864591992,0.5836390256881714,0.49867120557411587,3,0
+"I was dispossessed of my property without due process, how can I recover possession?","Specific Relief Act, 1963",5,0.5691811859285087,0.5811764001846313,0.5012081859345247,3,0
+"I was dispossessed of my property without due process, how can I recover possession?","Karnataka Rent Act, 1999",35,0.5553049672104198,0.6102644205093384,0.2438677870282051,2,0
+"I was dispossessed of my property without due process, how can I recover possession?","Bharatiya Nagarik Suraksha Sanhita, 2023",498,0.5223429858368149,0.5577881932258606,0.3214866318182887,3,0
+"I was dispossessed of my property without due process, how can I recover possession?","Bharatiya Nyaya Sanhita, 2023",303,0.5083925652484949,0.5375270843505859,0.3432968775304524,3,0
+"I was dispossessed of my property without due process, how can I recover possession?","Bharatiya Nyaya Sanhita, 2023",315,0.49473488792485465,0.5119141936302185,0.39738538958671815,3,0
+"I was dispossessed of my property without due process, how can I recover possession?","Transfer of Property Act, 1882",62,0.49352754576812524,0.4809161424636841,0.5649921247568621,3,0
+Do I have to give information about my vehicle if the police ask?,"Motor Vehicles Act, 1988",133,0.5713923215866089,0.495755672454834,1.0,4,1
+Do I have to give information about my vehicle if the police ask?,"Motor Vehicles Act, 1988",62,0.5531692269663109,0.5416212677955627,0.6186076423990017,3,0
+Do I have to give information about my vehicle if the police ask?,"Motor Vehicles Act, 1988",159,0.4613526290060887,0.4684552550315857,0.4211043155205312,2,0
+Do I have to give information about my vehicle if the police ask?,"Motor Vehicles Act, 1988",160,0.43515836228639504,0.39923712611198425,0.6387119842708521,3,0
+Do I have to give information about my vehicle if the police ask?,"Motor Vehicles Act, 1988",207,0.4046408625817945,0.40170809626579285,0.4212598617716963,2,0
+Do I have to give information about my vehicle if the police ask?,"Bharatiya Nagarik Suraksha Sanhita, 2023",48,0.4019225940000498,0.358328640460968,0.6489549775199652,4,0
+Do I have to give information about my vehicle if the police ask?,"Motor Vehicles Act, 1988",136,0.3978781005838434,0.4077708125114441,0.34181926058326806,1,0
+Do I have to give information about my vehicle if the police ask?,"Motor Vehicles Act, 1988",127,0.3969917535487165,0.3774000406265259,0.5080113408985073,2,0
+Do I have to give information about my vehicle if the police ask?,"Bharatiya Nagarik Suraksha Sanhita, 2023",173,0.3918613342871375,0.3609124422073364,0.56723842914244,3,0
+Do I have to give information about my vehicle if the police ask?,"Motor Vehicles Act, 1988",152,0.3901194192503255,0.3624657988548279,0.5468232482899303,3,0
+"Someone is selling fake branded goods with a counterfeit mark, is that a crime?","Bharatiya Nyaya Sanhita, 2023",349,0.8185417294502259,0.7865196466445923,1.0,5,1
+"Someone is selling fake branded goods with a counterfeit mark, is that a crime?","Bharatiya Nyaya Sanhita, 2023",342,0.5939857216717664,0.6068178415298462,0.521270336072885,3,0
+"Someone is selling fake branded goods with a counterfeit mark, is that a crime?","Bharatiya Nyaya Sanhita, 2023",347,0.5871300431368868,0.5990336537361145,0.5196760311908991,3,0
+"Someone is selling fake branded goods with a counterfeit mark, is that a crime?","Bharatiya Nyaya Sanhita, 2023",348,0.5242079383737749,0.5382324457168579,0.4447356108870149,3,0
+"Someone is selling fake branded goods with a counterfeit mark, is that a crime?","Bharatiya Nyaya Sanhita, 2023",180,0.5185371704643862,0.5451055765151978,0.36798282977335756,2,0
+"Someone is selling fake branded goods with a counterfeit mark, is that a crime?","Bharatiya Nyaya Sanhita, 2023",341,0.5055198195069628,0.5347330570220947,0.33997802104525854,2,0
+"Someone is selling fake branded goods with a counterfeit mark, is that a crime?","Bharatiya Nyaya Sanhita, 2023",179,0.47435437669119707,0.5039782524108887,0.3064856284036549,1,0
+"Someone is selling fake branded goods with a counterfeit mark, is that a crime?","Bharatiya Nyaya Sanhita, 2023",350,0.450419429584372,0.44092416763305664,0.504225913975159,3,0
+"Someone is selling fake branded goods with a counterfeit mark, is that a crime?","Consumer Protection Act, 2019",86,0.41886014472593747,0.45975470542907715,0.18712426100504947,2,0
+"Someone is selling fake branded goods with a counterfeit mark, is that a crime?","Consumer Protection Act, 2019",91,0.41493356391283404,0.41925713419914246,0.39043328261988236,3,0
+Can police ask a repeat offender to give a bond for good behaviour?,"Bharatiya Nagarik Suraksha Sanhita, 2023",136,0.6530746316523346,0.5921006798744202,0.9985936321225385,4,0
+Can police ask a repeat offender to give a bond for good behaviour?,"Bharatiya Nagarik Suraksha Sanhita, 2023",128,0.6428184747695923,0.5797864198684692,1.0,3,0
+Can police ask a repeat offender to give a bond for good behaviour?,"Bharatiya Nagarik Suraksha Sanhita, 2023",139,0.6150679854701077,0.5623461008071899,0.9138252126840187,3,0
+Can police ask a repeat offender to give a bond for good behaviour?,"Bharatiya Nagarik Suraksha Sanhita, 2023",485,0.6117458156379898,0.6270157098770142,0.525216136795176,2,0
+Can police ask a repeat offender to give a bond for good behaviour?,"Bharatiya Nagarik Suraksha Sanhita, 2023",143,0.5239776655044583,0.5282015204429626,0.5000424279149562,2,0
+Can police ask a repeat offender to give a bond for good behaviour?,"Bharatiya Nagarik Suraksha Sanhita, 2023",484,0.5132070172013005,0.5150530338287354,0.5027460973667837,2,0
+Can police ask a repeat offender to give a bond for good behaviour?,"Bharatiya Nagarik Suraksha Sanhita, 2023",83,0.5076009997719707,0.48495984077453613,0.6359007418117142,3,0
+Can police ask a repeat offender to give a bond for good behaviour?,"Bharatiya Nagarik Suraksha Sanhita, 2023",490,0.4999993394613059,0.4320356845855713,0.8851265581447493,3,0
+Can police ask a repeat offender to give a bond for good behaviour?,"Bharatiya Nagarik Suraksha Sanhita, 2023",142,0.48403620948436454,0.4441148042678833,0.7102575057110916,5,0
+Can police ask a repeat offender to give a bond for good behaviour?,"Bharatiya Nagarik Suraksha Sanhita, 2023",129,0.4779672723506663,0.43921878933906555,0.6975419001412217,3,1
+Can a domestic violence victim get monetary compensation for injuries?,"Protection of Women from Domestic Violence Act, 2005",22,0.7349555134773255,0.6881829500198364,1.0,4,1
+Can a domestic violence victim get monetary compensation for injuries?,"Protection of Women from Domestic Violence Act, 2005",20,0.6681631749083994,0.6588030457496643,0.7212038472032534,3,0
+Can a domestic violence victim get monetary compensation for injuries?,"Protection of Women from Domestic Violence Act, 2005",5,0.6160528064927338,0.5814353227615356,0.8122183886904707,4,0
+Can a domestic violence victim get monetary compensation for injuries?,"Bharatiya Nagarik Suraksha Sanhita, 2023",396,0.5510360955250153,0.5513322353363037,0.5493579699277144,2,0
+Can a domestic violence victim get monetary compensation for injuries?,"Specific Relief Act, 1963",21,0.5502350605171565,0.6038210391998291,0.24658102236962617,1,0
+Can a domestic violence victim get monetary compensation for injuries?,"Motor Vehicles Act, 1988",164,0.5404966668059933,0.572374701499939,0.35985443047053783,2,0
+Can a domestic violence victim get monetary compensation for injuries?,"Protection of Women from Domestic Violence Act, 2005",3,0.5309555541997435,0.5475368499755859,0.43699483840020675,2,0
+Can a domestic violence victim get monetary compensation for injuries?,"Bharatiya Nagarik Suraksha Sanhita, 2023",395,0.5204316198365901,0.5744608640670776,0.21426586279406423,1,0
+Can a domestic violence victim get monetary compensation for injuries?,"Protection of Women from Domestic Violence Act, 2005",2,0.5163578026864817,0.4933781623840332,0.6465756451910666,4,0
+Can a domestic violence victim get monetary compensation for injuries?,"Protection of Women from Domestic Violence Act, 2005",4,0.5019214249274719,0.5060738921165466,0.47839071791807036,2,0
+Can I leave property to my grandchild who hasn't been born yet?,"Transfer of Property Act, 1882",30,0.4660069898714599,0.4989946484565735,0.2790768649511715,1,0
+Can I leave property to my grandchild who hasn't been born yet?,"Bharatiya Nyaya Sanhita, 2023",91,0.4640937983989716,0.3695220947265625,1.0,1,0
+Can I leave property to my grandchild who hasn't been born yet?,"Karnataka Rent Act, 1999",5,0.4494024309922867,0.5189387798309326,0.055363041433766955,1,0
+Can I leave property to my grandchild who hasn't been born yet?,"Bharatiya Nyaya Sanhita, 2023",93,0.4298988290065699,0.4338589906692505,0.40745775397232703,1,0
+Can I leave property to my grandchild who hasn't been born yet?,"Bharatiya Nagarik Suraksha Sanhita, 2023",144,0.4180709023007768,0.48127007484436035,0.05994213867784731,1,0
+Can I leave property to my grandchild who hasn't been born yet?,"Transfer of Property Act, 1882",6,0.4093519800805548,0.4363977611064911,0.256092584069238,2,0
+Can I leave property to my grandchild who hasn't been born yet?,"Transfer of Property Act, 1882",13,0.40928230959639744,0.4386853575706482,0.2426648986648055,1,1
+Can I leave property to my grandchild who hasn't been born yet?,"Transfer of Property Act, 1882",29,0.4030551430463668,0.44710713624954224,0.15342720142992114,0,0
+Can I leave property to my grandchild who hasn't been born yet?,"Bharatiya Nagarik Suraksha Sanhita, 2023",88,0.38439409180604456,0.38607388734817505,0.37487515105956387,2,0
+Can I leave property to my grandchild who hasn't been born yet?,"Transfer of Property Act, 1882",27,0.3810455277723164,0.4158562123775482,0.18378501147832482,1,0
+"Someone took my car without asking me, is that a crime?","Motor Vehicles Act, 1988",197,0.4269143397559947,0.41647034883499146,0.4860969748432281,2,1
+"Someone took my car without asking me, is that a crime?","Bharatiya Nagarik Suraksha Sanhita, 2023",499,0.4253943100118782,0.42399701476097107,0.43331234623600795,2,0
+"Someone took my car without asking me, is that a crime?","Bharatiya Nyaya Sanhita, 2023",303,0.4035251870989123,0.3887377381324768,0.48732071137383154,2,0
+"Someone took my car without asking me, is that a crime?","Motor Vehicles Act, 1988",207,0.3930525949490837,0.3822091817855835,0.45449844392986544,2,0
+"Someone took my car without asking me, is that a crime?","Bharatiya Nagarik Suraksha Sanhita, 2023",107,0.36640602765120167,0.2609698474407196,0.9638776658400628,2,0
+"Someone took my car without asking me, is that a crime?","Bharatiya Nagarik Suraksha Sanhita, 2023",35,0.35753135679418807,0.3412052392959595,0.4500459828810535,2,0
+"Someone took my car without asking me, is that a crime?","Motor Vehicles Act, 1988",208,0.35333832205692106,0.37750715017318726,0.2163814903205749,1,0
+"Someone took my car without asking me, is that a crime?","Bharatiya Nagarik Suraksha Sanhita, 2023",120,0.3433660107905082,0.2406984269618988,0.9251489162805427,2,0
+"Someone took my car without asking me, is that a crime?","Bharatiya Nagarik Suraksha Sanhita, 2023",244,0.3400182859868635,0.2787143588066101,0.6874071470703212,2,0
+"Someone took my car without asking me, is that a crime?","Motor Vehicles Act, 1988",192A,0.3381051074325828,0.3254307806491852,0.40992614352689094,2,0
+"The other person flat out refused to do their part of the deal, can I cancel the contract?","Specific Relief Act, 1963",27,0.5694159507751465,0.4934305250644684,1.0,4,0
+"The other person flat out refused to do their part of the deal, can I cancel the contract?","Indian Contract Act, 1872",53,0.5216928881211383,0.5513970851898193,0.3533690252590863,2,0
+"The other person flat out refused to do their part of the deal, can I cancel the contract?","Indian Contract Act, 1872",64,0.5081837526148993,0.5342279672622681,0.3605997901402839,3,0
+"The other person flat out refused to do their part of the deal, can I cancel the contract?","Specific Relief Act, 1963",32,0.46513057883392284,0.37437164783477783,0.9794311480926482,2,0
+"The other person flat out refused to do their part of the deal, can I cancel the contract?","Specific Relief Act, 1963",19,0.43203082352029915,0.3993595838546753,0.617167729082878,4,0
+"The other person flat out refused to do their part of the deal, can I cancel the contract?","Indian Contract Act, 1872",19,0.4283599988840115,0.4332021474838257,0.40092099787267843,2,0
+"The other person flat out refused to do their part of the deal, can I cancel the contract?","Specific Relief Act, 1963",12,0.4130407781931998,0.36453670263290405,0.6878971467635641,3,0
+"The other person flat out refused to do their part of the deal, can I cancel the contract?","Indian Contract Act, 1872",19A,0.412134287734077,0.43401798605918884,0.28812665395766934,1,0
+"The other person flat out refused to do their part of the deal, can I cancel the contract?","Indian Contract Act, 1872",37,0.4117947167564824,0.36897996068000793,0.6544116777906116,3,0
+"The other person flat out refused to do their part of the deal, can I cancel the contract?","Specific Relief Act, 1963",29,0.40354582868839195,0.42819586396217346,0.2638622259315446,1,0
+"If my agent's authority ends, does that also end my sub-agent's authority?","Indian Contract Act, 1872",210,0.7891355631835323,0.7571234703063965,0.9705371844020559,4,1
+"If my agent's authority ends, does that also end my sub-agent's authority?","Indian Contract Act, 1872",193,0.5826517879962921,0.5090020895004272,1.0,5,0
+"If my agent's authority ends, does that also end my sub-agent's authority?","Indian Contract Act, 1872",188,0.5729298433047013,0.5053662061691284,0.9557903742667547,3,0
+"If my agent's authority ends, does that also end my sub-agent's authority?","Indian Contract Act, 1872",201,0.5671311829305445,0.5096260905265808,0.8929933533514575,4,0
+"If my agent's authority ends, does that also end my sub-agent's authority?","Indian Contract Act, 1872",226,0.5419296902742198,0.5046893954277039,0.7529578489238756,3,0
+"If my agent's authority ends, does that also end my sub-agent's authority?","Indian Contract Act, 1872",186,0.5240053593139024,0.44862455129623413,0.9511632118093774,3,0
+"If my agent's authority ends, does that also end my sub-agent's authority?","Indian Contract Act, 1872",227,0.5107064938822072,0.45852991938591003,0.8063736202178279,4,0
+"If my agent's authority ends, does that also end my sub-agent's authority?","Indian Contract Act, 1872",190,0.5022307288762904,0.48842644691467285,0.5804548343797372,2,0
+"If my agent's authority ends, does that also end my sub-agent's authority?","Indian Contract Act, 1872",191,0.4829730713071886,0.4635377824306488,0.5931063650068066,2,0
+"If my agent's authority ends, does that also end my sub-agent's authority?","Indian Contract Act, 1872",221,0.482451298401676,0.43298283219337463,0.762772616849491,4,0
+Does my landlord have to give me notice before increasing my rent?,"Karnataka Rent Act, 1999",10,1.3414628656255174,0.6975838541984558,0.8166704713139601,4,1
+Does my landlord have to give me notice before increasing my rent?,"Karnataka Rent Act, 1999",6,1.3028993641681859,0.6560232639312744,0.9150656719021931,5,0
+Does my landlord have to give me notice before increasing my rent?,"Karnataka Rent Act, 1999",34,1.1933100055762331,0.6051488518714905,0.8137032124230422,4,0
+Does my landlord have to give me notice before increasing my rent?,"Karnataka Rent Act, 1999",9,1.1893050960463039,0.6365649104118347,0.6214391626293579,3,0
+Does my landlord have to give me notice before increasing my rent?,"Karnataka Rent Act, 1999",14,1.1450636468596551,0.6280892491340637,0.5121648602193521,3,0
+Does my landlord have to give me notice before increasing my rent?,"Karnataka Rent Act, 1999",41,1.1089523432177844,0.603861927986145,0.5210572869768993,1,0
+Does my landlord have to give me notice before increasing my rent?,"Karnataka Rent Act, 1999",39,1.0957999203744728,0.5928467512130737,0.5367122929690321,1,0
+Does my landlord have to give me notice before increasing my rent?,"Karnataka Rent Act, 1999",13,1.0932758219451568,0.581030011177063,0.5946993668559258,3,0
+Does my landlord have to give me notice before increasing my rent?,"Karnataka Rent Act, 1999",12,1.0924868949384674,0.5653270483016968,0.6808778685573956,4,0
+Does my landlord have to give me notice before increasing my rent?,"Karnataka Rent Act, 1999",33,1.0918868221342564,0.5086348652839661,1.0,5,0
+"Police say my complaint is non-cognizable, what happens to my case now?","Bharatiya Nagarik Suraksha Sanhita, 2023",272,0.5877884533576851,0.5975649356842041,0.5323882278950252,3,0
+"Police say my complaint is non-cognizable, what happens to my case now?","Bharatiya Nagarik Suraksha Sanhita, 2023",400,0.5628384587832986,0.5206565856933594,0.8018689934867618,3,0
+"Police say my complaint is non-cognizable, what happens to my case now?","Bharatiya Nagarik Suraksha Sanhita, 2023",224,0.5567820096643015,0.5867214202880859,0.387125230253567,2,0
+"Police say my complaint is non-cognizable, what happens to my case now?","Bharatiya Nagarik Suraksha Sanhita, 2023",174,0.5201133728027344,0.4354274868965149,1.0,4,1
+"Police say my complaint is non-cognizable, what happens to my case now?","Bharatiya Nagarik Suraksha Sanhita, 2023",279,0.5167838641231534,0.518832266330719,0.5051761920089697,3,0
+"Police say my complaint is non-cognizable, what happens to my case now?","Consumer Protection Act, 2019",69,0.48446362575667473,0.5049482583999634,0.36838388183231957,2,0
+"Police say my complaint is non-cognizable, what happens to my case now?","Bharatiya Nagarik Suraksha Sanhita, 2023",225,0.48083386475766876,0.4934813976287842,0.40916447208491835,3,0
+"Police say my complaint is non-cognizable, what happens to my case now?","Consumer Protection Act, 2019",38,0.472902957773663,0.4959335923194885,0.3423959293395768,2,0
+"Police say my complaint is non-cognizable, what happens to my case now?","Bharatiya Nagarik Suraksha Sanhita, 2023",233,0.4720795207805149,0.44557711482048035,0.6222598112866032,3,0
+"Police say my complaint is non-cognizable, what happens to my case now?","Bharatiya Nagarik Suraksha Sanhita, 2023",210,0.45807460936388306,0.46947628259658813,0.3934650283708131,2,0
+"Someone physically blocked me from walking away, what crime is that?","Bharatiya Nyaya Sanhita, 2023",304,0.4504534622314241,0.42656421661376953,0.5858258540647997,1,0
+"Someone physically blocked me from walking away, what crime is that?","Bharatiya Nyaya Sanhita, 2023",265,0.4212291944914529,0.46944552659988403,0.14800317346617214,1,0
+"Someone physically blocked me from walking away, what crime is that?","Bharatiya Nyaya Sanhita, 2023",309,0.412988004388093,0.3928920030593872,0.5268653055143296,2,0
+"Someone physically blocked me from walking away, what crime is that?","Bharatiya Nyaya Sanhita, 2023",262,0.4095369279384613,0.4818081259727478,0.0,0,0
+"Someone physically blocked me from walking away, what crime is that?","Bharatiya Nyaya Sanhita, 2023",78,0.4064732095770841,0.35027948021888733,0.7249042730681134,2,0
+"Someone physically blocked me from walking away, what crime is that?","Bharatiya Nyaya Sanhita, 2023",264,0.3981896185540874,0.44325801730155945,0.14280189650834868,1,0
+"Someone physically blocked me from walking away, what crime is that?","Bharatiya Nyaya Sanhita, 2023",111,0.39208265169198564,0.3111061453819275,0.8509494214412407,2,0
+"Someone physically blocked me from walking away, what crime is that?","Bharatiya Nyaya Sanhita, 2023",307,0.3872622021171003,0.43544867634773254,0.11420552474429158,1,0
+"Someone physically blocked me from walking away, what crime is that?","Bharatiya Nyaya Sanhita, 2023",126,0.38584244797447065,0.4126780033111572,0.23377422159372033,1,1
+"Someone physically blocked me from walking away, what crime is that?","Bharatiya Nagarik Suraksha Sanhita, 2023",129,0.3832978802102909,0.425029993057251,0.14681590741085013,1,0
+"There's an arrest warrant against me, what happens when the police come?","Bharatiya Nagarik Suraksha Sanhita, 2023",82,0.7773990435028685,0.7531507611274719,0.9148059968316641,5,1
+"There's an arrest warrant against me, what happens when the police come?","Bharatiya Nagarik Suraksha Sanhita, 2023",35,0.7352783418072275,0.7179081439971924,0.8337094627307602,5,0
+"There's an arrest warrant against me, what happens when the police come?","Bharatiya Nagarik Suraksha Sanhita, 2023",49,0.7215581874144192,0.7026174068450928,0.8288890388886905,5,0
+"There's an arrest warrant against me, what happens when the police come?","Bharatiya Nagarik Suraksha Sanhita, 2023",78,0.7019276863700193,0.6953226327896118,0.7393560451706532,5,0
+"There's an arrest warrant against me, what happens when the police come?","Bharatiya Nagarik Suraksha Sanhita, 2023",77,0.6755950160407495,0.6625276207923889,0.7496434500372877,4,0
+"There's an arrest warrant against me, what happens when the police come?","Bharatiya Nagarik Suraksha Sanhita, 2023",58,0.6659075648031316,0.6563218235969543,0.7202267848396845,5,0
+"There's an arrest warrant against me, what happens when the police come?","Bharatiya Nagarik Suraksha Sanhita, 2023",41,0.6567424785792635,0.6497108936309814,0.6965881266195281,5,0
+"There's an arrest warrant against me, what happens when the police come?","Bharatiya Nagarik Suraksha Sanhita, 2023",47,0.6475195634876273,0.6194939017295837,0.8063314679692734,5,0
+"There's an arrest warrant against me, what happens when the police come?","Motor Vehicles Act, 1988",202,0.6382497472651554,0.5936456322669983,0.8910063393167339,5,0
+"There's an arrest warrant against me, what happens when the police come?","Bharatiya Nagarik Suraksha Sanhita, 2023",57,0.6382279948944612,0.6289743185043335,0.6906652162835097,5,0
+Can the government change traffic fine amounts after they're set?,"Motor Vehicles Act, 1988",199B,0.49971555120635985,0.5696162581443787,0.10361144588317882,1,1
+Can the government change traffic fine amounts after they're set?,"Motor Vehicles Act, 1988",116,0.4984240472316742,0.4099106192588806,1.0,4,0
+Can the government change traffic fine amounts after they're set?,"Motor Vehicles Act, 1988",210A,0.45699491563036104,0.47882676124572754,0.333281123809951,2,0
+Can the government change traffic fine amounts after they're set?,"Motor Vehicles Act, 1988",201,0.4234912307721574,0.3879051208496094,0.6251457741937365,2,0
+Can the government change traffic fine amounts after they're set?,"Motor Vehicles Act, 1988",138,0.3786563952886638,0.38607650995254517,0.33660893978249823,2,0
+Can the government change traffic fine amounts after they're set?,"Motor Vehicles Act, 1988",65,0.3628165359031491,0.3742601275444031,0.29796953647092506,2,0
+Can the government change traffic fine amounts after they're set?,"Motor Vehicles Act, 1988",135,0.3623697582652094,0.33326321840286255,0.5273066784076705,3,0
+Can the government change traffic fine amounts after they're set?,"Bharatiya Nagarik Suraksha Sanhita, 2023",239,0.3612037595448016,0.4083728790283203,0.09391208247152887,1,0
+Can the government change traffic fine amounts after they're set?,"Bharatiya Nagarik Suraksha Sanhita, 2023",461,0.3557413597442668,0.38719844818115234,0.1774844060592926,1,0
+Can the government change traffic fine amounts after they're set?,"Motor Vehicles Act, 1988",117,0.3501022711552195,0.3344361186027527,0.43887711575098326,2,0
+Is there a time limit to appeal to the IT Appellate Tribunal?,"Information Technology Act, 2000",62,0.7508172451821122,0.7337338924407959,0.8476229901890976,4,0
+Is there a time limit to appeal to the IT Appellate Tribunal?,"Information Technology Act, 2000",60,0.7122493817193064,0.6928019523620605,0.8224514019375067,3,1
+Is there a time limit to appeal to the IT Appellate Tribunal?,"Information Technology Act, 2000",57,0.6667441368103028,0.6079342365264893,1.0,5,0
+Is there a time limit to appeal to the IT Appellate Tribunal?,"Motor Vehicles Act, 1988",173,0.6213526932151353,0.6300498247146606,0.5720688288418689,4,0
+Is there a time limit to appeal to the IT Appellate Tribunal?,"Bharatiya Nagarik Suraksha Sanhita, 2023",426,0.6035681920156271,0.6145198941230774,0.5415085666082897,4,0
+Is there a time limit to appeal to the IT Appellate Tribunal?,"Consumer Protection Act, 2019",52,0.6003313039830633,0.6556922793388367,0.28661885201355375,2,0
+Is there a time limit to appeal to the IT Appellate Tribunal?,"Bharatiya Nagarik Suraksha Sanhita, 2023",432,0.599775358067131,0.6158275008201599,0.5088129575131733,3,0
+Is there a time limit to appeal to the IT Appellate Tribunal?,"Protection of Women from Domestic Violence Act, 2005",29,0.5943342494198729,0.6307675838470459,0.38787844924731324,2,0
+Is there a time limit to appeal to the IT Appellate Tribunal?,"Bharatiya Nagarik Suraksha Sanhita, 2023",435,0.5890915383644749,0.6167794466018677,0.43219327247662653,2,0
+Is there a time limit to appeal to the IT Appellate Tribunal?,"Bharatiya Nagarik Suraksha Sanhita, 2023",434,0.5833092263246272,0.5956329703330994,0.5134744981293505,2,0
+When does an agent's authority to act for someone officially end?,"Indian Contract Act, 1872",210,0.7046643375302393,0.662970244884491,0.940930763181738,4,0
+When does an agent's authority to act for someone officially end?,"Indian Contract Act, 1872",201,0.6950363565833676,0.6635341048240662,0.8735490172116676,5,1
+When does an agent's authority to act for someone officially end?,"Indian Contract Act, 1872",188,0.6533165216445923,0.5921370983123779,1.0,4,0
+When does an agent's authority to act for someone officially end?,"Indian Contract Act, 1872",226,0.5642829153573093,0.5431693196296692,0.6839264854030994,2,0
+When does an agent's authority to act for someone officially end?,"Indian Contract Act, 1872",186,0.5568186562664215,0.48574963212013245,0.9595431363628337,3,0
+When does an agent's authority to act for someone officially end?,"Indian Contract Act, 1872",221,0.4679802252636194,0.4153363108634949,0.7662957203294434,4,0
+When does an agent's authority to act for someone officially end?,"Indian Contract Act, 1872",235,0.44188891023542354,0.37581485509872437,0.8163085361418375,4,0
+When does an agent's authority to act for someone officially end?,"Indian Contract Act, 1872",195,0.44137001780758167,0.40898510813713074,0.6248844165331697,2,0
+When does an agent's authority to act for someone officially end?,"Indian Contract Act, 1872",227,0.43983469429762645,0.37979957461357117,0.7800337356429289,4,0
+When does an agent's authority to act for someone officially end?,"Indian Contract Act, 1872",190,0.41970720800990513,0.36683979630470276,0.7192891778703961,2,0
+What happens if I drive without a proper licence?,"Motor Vehicles Act, 1988",16,0.7050215244293213,0.6529664993286133,1.0,4,0
+What happens if I drive without a proper licence?,"Motor Vehicles Act, 1988",19,0.6677486803526759,0.6249538660049438,0.9102526680595875,4,0
+What happens if I drive without a proper licence?,"Motor Vehicles Act, 1988",15,0.6554558124316212,0.6739000082015991,0.5509387428048431,2,0
+What happens if I drive without a proper licence?,"Motor Vehicles Act, 1988",11,0.6453578656436137,0.5828647017478943,0.9994857745178094,4,0
+What happens if I drive without a proper licence?,"Motor Vehicles Act, 1988",182,0.6400016614647985,0.6201319098472595,0.7525969007626382,3,0
+What happens if I drive without a proper licence?,"Motor Vehicles Act, 1988",3,0.6007877449852639,0.5610350370407104,0.8260529310586804,3,0
+What happens if I drive without a proper licence?,"Motor Vehicles Act, 1988",10,0.596924511636354,0.5480127930641174,0.8740907778015236,4,0
+What happens if I drive without a proper licence?,"Motor Vehicles Act, 1988",6,0.5929121664860939,0.544694185256958,0.866147274241908,3,0
+What happens if I drive without a proper licence?,"Information Technology Act, 2000",33,0.5914737770468697,0.5690447688102722,0.7185714705193735,2,0
+What happens if I drive without a proper licence?,"Motor Vehicles Act, 1988",9,0.5866565780706228,0.5446314811706543,0.8247987938371112,3,0
+Is it a crime to give police false information to get someone else in trouble?,"Bharatiya Nyaya Sanhita, 2023",240,0.6175167315641232,0.6055236458778381,0.6854774908484276,2,0
+Is it a crime to give police false information to get someone else in trouble?,"Bharatiya Nyaya Sanhita, 2023",212,0.5967040300369263,0.5255341529846191,1.0,4,0
+Is it a crime to give police false information to get someone else in trouble?,"Bharatiya Nyaya Sanhita, 2023",238,0.5749938063656026,0.5725733637809753,0.5887096278102752,2,0
+Is it a crime to give police false information to get someone else in trouble?,"Bharatiya Nyaya Sanhita, 2023",232,0.569491786522467,0.5264270305633545,0.8135254036241045,2,0
+Is it a crime to give police false information to get someone else in trouble?,"Bharatiya Nyaya Sanhita, 2023",239,0.5541229838946061,0.5373170971870422,0.6493562425630605,2,0
+Is it a crime to give police false information to get someone else in trouble?,"Bharatiya Nyaya Sanhita, 2023",231,0.5471574548513463,0.558755099773407,0.4814373676185939,2,0
+Is it a crime to give police false information to get someone else in trouble?,"Bharatiya Nyaya Sanhita, 2023",217,0.5443150334919356,0.4796036183834076,0.9110130425061531,4,1
+Is it a crime to give police false information to get someone else in trouble?,"Bharatiya Nagarik Suraksha Sanhita, 2023",33,0.526497416603901,0.48721998929977417,0.7490694053195456,3,0
+Is it a crime to give police false information to get someone else in trouble?,"Bharatiya Nagarik Suraksha Sanhita, 2023",173,0.522504675646344,0.47126346826553345,0.8128713783934325,4,0
+Is it a crime to give police false information to get someone else in trouble?,"Bharatiya Nyaya Sanhita, 2023",230,0.5041059290798255,0.5014874935150146,0.5189436908773244,2,0
+What's the difference between a temporary and a permanent court injunction?,"Specific Relief Act, 1963",37,0.8255598215348251,0.8014272451400757,0.9623108096167293,3,1
+What's the difference between a temporary and a permanent court injunction?,"Specific Relief Act, 1963",38,0.6710301148271763,0.6579233407974243,0.7453017151198147,3,0
+What's the difference between a temporary and a permanent court injunction?,"Specific Relief Act, 1963",36,0.5934760808944702,0.5217365622520447,1.0,3,0
+What's the difference between a temporary and a permanent court injunction?,"Specific Relief Act, 1963",40,0.5425750755281357,0.5216538906097412,0.6611284567323709,2,0
+What's the difference between a temporary and a permanent court injunction?,"Specific Relief Act, 1963",41,0.5138832698915857,0.49834758043289185,0.6019187441497768,2,0
+What's the difference between a temporary and a permanent court injunction?,"Specific Relief Act, 1963",39,0.4706780119243967,0.4594349265098572,0.5343886901959493,2,0
+What's the difference between a temporary and a permanent court injunction?,"Bharatiya Nagarik Suraksha Sanhita, 2023",161,0.4343320731229299,0.4141697883605957,0.5485848611637706,1,0
+What's the difference between a temporary and a permanent court injunction?,"Protection of Women from Domestic Violence Act, 2005",23,0.40412425994873047,0.47544029355049133,0.0,0,0
+What's the difference between a temporary and a permanent court injunction?,"Bharatiya Nagarik Suraksha Sanhita, 2023",519,0.3944307663253055,0.44940757751464844,0.08289542344616926,1,0
+What's the difference between a temporary and a permanent court injunction?,"Bharatiya Nyaya Sanhita, 2023",293,0.38882400025120456,0.359825074672699,0.5531512650642845,1,0
+Can I get in trouble for parking my car somewhere unsafe?,"Motor Vehicles Act, 1988",117,0.4631122011846465,0.3829316794872284,0.917468441132812,1,0
+Can I get in trouble for parking my car somewhere unsafe?,"Motor Vehicles Act, 1988",190,0.4600906720954633,0.44181644916534424,0.5636446020328044,1,0
+Can I get in trouble for parking my car somewhere unsafe?,"Motor Vehicles Act, 1988",127,0.4070301138808486,0.37153249979019165,0.6081832007899265,1,0
+Can I get in trouble for parking my car somewhere unsafe?,"Motor Vehicles Act, 1988",135,0.39331556233524867,0.3490254580974579,0.6442926905393326,1,0
+Can I get in trouble for parking my car somewhere unsafe?,"Motor Vehicles Act, 1988",184,0.39249998331069946,0.4617646634578705,0.0,0,0
+Can I get in trouble for parking my car somewhere unsafe?,"Motor Vehicles Act, 1988",201,0.385329008102417,0.4533282220363617,0.0,0,0
+Can I get in trouble for parking my car somewhere unsafe?,"Motor Vehicles Act, 1988",122,0.38157856464385986,0.448915958404541,0.0,0,1
+Can I get in trouble for parking my car somewhere unsafe?,"Bharatiya Nyaya Sanhita, 2023",270,0.3730081617832184,0.4388331174850464,0.0,0,0
+Can I get in trouble for parking my car somewhere unsafe?,"Bharatiya Nyaya Sanhita, 2023",327,0.35683379471302035,0.2433338761329651,1.0,1,0
+Can I get in trouble for parking my car somewhere unsafe?,"Motor Vehicles Act, 1988",186,0.35519939661026,0.41788163781166077,0.0,0,0
+What's the punishment for kidnapping someone for ransom?,"Bharatiya Nyaya Sanhita, 2023",140,0.7686256408691406,0.7277948260307312,1.0,2,1
+What's the punishment for kidnapping someone for ransom?,"Bharatiya Nyaya Sanhita, 2023",137,0.6055978345743287,0.600723147392273,0.6332209427300218,1,0
+What's the punishment for kidnapping someone for ransom?,"Bharatiya Nyaya Sanhita, 2023",139,0.5752873539458535,0.5918258428573608,0.4815690514318292,2,0
+What's the punishment for kidnapping someone for ransom?,"Bharatiya Nyaya Sanhita, 2023",97,0.566551802305222,0.5645807981491089,0.5777207861200998,1,0
+What's the punishment for kidnapping someone for ransom?,"Bharatiya Nyaya Sanhita, 2023",142,0.5090625286102295,0.5988970994949341,0.0,0,0
+What's the punishment for kidnapping someone for ransom?,"Bharatiya Nyaya Sanhita, 2023",138,0.5013466477394104,0.5898195505142212,0.0,0,0
+What's the punishment for kidnapping someone for ransom?,"Bharatiya Nyaya Sanhita, 2023",304,0.4918004870414734,0.5785887837409973,0.0,0,0
+What's the punishment for kidnapping someone for ransom?,"Bharatiya Nyaya Sanhita, 2023",87,0.46650532147443147,0.46615368127822876,0.4684978896482688,1,0
+What's the punishment for kidnapping someone for ransom?,"Bharatiya Nagarik Suraksha Sanhita, 2023",201,0.4586084272426414,0.49206942319869995,0.2689960174839018,1,0
+What's the punishment for kidnapping someone for ransom?,"Bharatiya Nyaya Sanhita, 2023",309,0.4581631077994977,0.5142924785614014,0.14009651453632424,1,0
+"If I settle my consumer complaint, does the commission record that officially?","Consumer Protection Act, 2019",81,0.542782942289915,0.5118535757064819,0.7180492734565095,3,1
+"If I settle my consumer complaint, does the commission record that officially?","Consumer Protection Act, 2019",69,0.5312829526641581,0.4681929349899292,0.8887930130816923,3,0
+"If I settle my consumer complaint, does the commission record that officially?","Consumer Protection Act, 2019",38,0.5240145564079285,0.44001710414886475,1.0,5,0
+"If I settle my consumer complaint, does the commission record that officially?","Consumer Protection Act, 2019",36,0.4912611467514221,0.4239771068096161,0.8725372439449258,3,0
+"If I settle my consumer complaint, does the commission record that officially?","Consumer Protection Act, 2019",35,0.4627644303479602,0.4043220281600952,0.7939379632730024,4,0
+"If I settle my consumer complaint, does the commission record that officially?","Consumer Protection Act, 2019",59,0.44865333853530537,0.4377991557121277,0.5101603149286675,2,0
+"If I settle my consumer complaint, does the commission record that officially?","Consumer Protection Act, 2019",49,0.4166321140365566,0.4001271426677704,0.5101603149286675,2,0
+"If I settle my consumer complaint, does the commission record that officially?","Consumer Protection Act, 2019",48,0.39979136631301887,0.3448261022567749,0.7112610767557785,2,0
+"If I settle my consumer complaint, does the commission record that officially?","Consumer Protection Act, 2019",62,0.39728334374707314,0.3414977192878723,0.7134018227445664,2,0
+"If I settle my consumer complaint, does the commission record that officially?","Consumer Protection Act, 2019",39,0.3864910889637865,0.34631040692329407,0.6141815509878248,4,0
+Can a court order my abuser to stay away from me?,"Specific Relief Act, 1963",38,0.6995190620422364,0.6464930176734924,1.0,3,0
+Can a court order my abuser to stay away from me?,"Specific Relief Act, 1963",37,0.6588069563116016,0.6121895909309387,0.9229718082516601,4,0
+Can a court order my abuser to stay away from me?,"Specific Relief Act, 1963",41,0.5712906756424533,0.5644436478614807,0.6100903209206967,2,0
+Can a court order my abuser to stay away from me?,"Bharatiya Nagarik Suraksha Sanhita, 2023",161,0.5542859144915201,0.5315499305725098,0.6831230772263859,2,0
+Can a court order my abuser to stay away from me?,"Bharatiya Nyaya Sanhita, 2023",293,0.5318507285282746,0.5267665982246399,0.5606607803806567,1,0
+Can a court order my abuser to stay away from me?,"Specific Relief Act, 1963",40,0.4827707451476299,0.4141227602958679,0.871775972772733,3,0
+Can a court order my abuser to stay away from me?,"Bharatiya Nagarik Suraksha Sanhita, 2023",304,0.44614435004572905,0.48067963123321533,0.25044426437092077,2,0
+Can a court order my abuser to stay away from me?,"Bharatiya Nagarik Suraksha Sanhita, 2023",500,0.42574765068139275,0.4503524601459503,0.2863203672465776,2,0
+Can a court order my abuser to stay away from me?,"Specific Relief Act, 1963",39,0.42568960586595034,0.4052271544933319,0.5416434870433473,2,0
+Can a court order my abuser to stay away from me?,"Protection of Women from Domestic Violence Act, 2005",23,0.421948162339045,0.473712295293808,0.12861806566128028,1,0
+Can police search me after they arrest me?,"Bharatiya Nagarik Suraksha Sanhita, 2023",49,0.7408311009407044,0.695095419883728,1.0,5,1
+Can police search me after they arrest me?,"Bharatiya Nagarik Suraksha Sanhita, 2023",44,0.700104844078489,0.6670442819595337,0.8874480691556662,5,0
+Can police search me after they arrest me?,"Bharatiya Nagarik Suraksha Sanhita, 2023",58,0.6542754932656314,0.6469452381134033,0.6958136057949239,4,0
+Can police search me after they arrest me?,"Bharatiya Nagarik Suraksha Sanhita, 2023",82,0.6327451185213038,0.6055742502212524,0.786713173539445,3,0
+Can police search me after they arrest me?,"Bharatiya Nagarik Suraksha Sanhita, 2023",43,0.6280918351611313,0.5785821676254272,0.9086465383905943,5,0
+Can police search me after they arrest me?,"Bharatiya Nagarik Suraksha Sanhita, 2023",47,0.6147181041355653,0.593368411064148,0.735699499524781,3,0
+Can police search me after they arrest me?,"Bharatiya Nagarik Suraksha Sanhita, 2023",41,0.6137744490247312,0.6193063259124756,0.5824269877151274,2,0
+Can police search me after they arrest me?,"Bharatiya Nagarik Suraksha Sanhita, 2023",35,0.6017879585623985,0.5851125717163086,0.6962818173569079,4,0
+Can police search me after they arrest me?,"Bharatiya Nagarik Suraksha Sanhita, 2023",61,0.6008485360376152,0.5868865251541138,0.6799664785015007,3,0
+Can police search me after they arrest me?,"Bharatiya Nagarik Suraksha Sanhita, 2023",36,0.5894785089968995,0.5608096718788147,0.751935153324972,3,0
+Is it a crime to convince a soldier to disobey orders?,"Bharatiya Nyaya Sanhita, 2023",166,0.5386846123154323,0.4743800759315491,0.9030769652892228,1,0
+Is it a crime to convince a soldier to disobey orders?,"Bharatiya Nyaya Sanhita, 2023",159,0.5280665621826647,0.4552813172340393,0.9405163034264232,1,1
+Is it a crime to convince a soldier to disobey orders?,"Bharatiya Nyaya Sanhita, 2023",14,0.5197513997910844,0.5083600878715515,0.5843021474668892,2,0
+Is it a crime to convince a soldier to disobey orders?,"Motor Vehicles Act, 1988",179,0.49537212861281726,0.5078848600387573,0.42446661079606035,1,0
+Is it a crime to convince a soldier to disobey orders?,"Bharatiya Nyaya Sanhita, 2023",223,0.4625559159435162,0.5356229543685913,0.04850924565880081,1,0
+Is it a crime to convince a soldier to disobey orders?,"Bharatiya Nyaya Sanhita, 2023",198,0.42131889991435256,0.4880692958831787,0.04306661635457462,1,0
+Is it a crime to convince a soldier to disobey orders?,"Bharatiya Nagarik Suraksha Sanhita, 2023",160,0.41518886041545694,0.47914010286331177,0.05279846667606449,1,0
+Is it a crime to convince a soldier to disobey orders?,"Bharatiya Nyaya Sanhita, 2023",163,0.4052123635687014,0.310899019241333,0.9396546480904556,1,0
+Is it a crime to convince a soldier to disobey orders?,"Bharatiya Nyaya Sanhita, 2023",161,0.3994295693983798,0.31433576345443726,0.8816276640032165,1,0
+Is it a crime to convince a soldier to disobey orders?,"Bharatiya Nyaya Sanhita, 2023",162,0.3950555445183579,0.35648617148399353,0.6136151959030258,1,0
