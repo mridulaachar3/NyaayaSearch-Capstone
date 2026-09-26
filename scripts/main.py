@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import re
 from search_core import SearchEngine, IPC_TO_BNS, IPC_OMITTED, extract_ipc_sections
-from rag_core import generate_explanation, translate_to_english, translate_explanation, detect_language, verify_citations
+from rag_core import generate_explanation, translate_to_english, translate_explanation, detect_language, verify_citations, get_static_message
 from citations_core import find_related_cases, load_citations
 from pdf_core import extract_text_from_pdf, answer_question_about_document, summarize_document, extract_dates_and_deadlines
 from dictionary_core import define_term
@@ -201,7 +201,7 @@ def explain(request: SearchRequest):
             "query": request.query,
             "translated_query": search_query,
             "results": [],
-            "explanation": "No relevant legal sections were found for this query. Try rephrasing with more specific details.",
+            "explanation": get_static_message("no_results", target_language),
             "language": target_language,
         }
 
@@ -209,11 +209,12 @@ def explain(request: SearchRequest):
     top_score = results[0].get("hybrid_score", 0)
     if top_score < CONFIDENCE_THRESHOLD:
         acts_seen = {}
+        sec_prefix = get_static_message("section_label", target_language) + " "
         for r in results:
             act = r["act_name"]
             if act not in acts_seen:
                 acts_seen[act] = []
-            acts_seen[act].append("Section " + str(r["section_number"]) + ": " + str(r["section_title"]))
+            acts_seen[act].append(sec_prefix + str(r["section_number"]) + ": " + str(r["section_title"]))
         candidates_text = ""
         for act, sections in acts_seen.items():
             candidates_text += "\n" + act + ":\n" + "\n".join("  - " + s for s in sections)
@@ -221,11 +222,7 @@ def explain(request: SearchRequest):
             "query": request.query,
             "translated_query": search_query,
             "results": results,
-            "explanation": (
-                "I am not confident enough about which section applies to your question to give a definite answer. "
-                "Here are the closest matching sections, grouped by Act - please check which one fits your situation, "
-                "or try rephrasing your question with more specific details:" + candidates_text
-            ),
+            "explanation": get_static_message("low_confidence_prefix", target_language) + candidates_text,
             "language": target_language,
             "low_confidence": True,
         }
@@ -248,9 +245,9 @@ def explain(request: SearchRequest):
         if not is_valid:
             explanation += "\n\n[Note: this explanation may reference a section number not confirmed in our search results (" + ", ".join(unverified_sections) + "). Please cross-check with the original statutory text shown above.]"
     except groq.RateLimitError:
-        explanation = "Plain-language explanation is temporarily unavailable due to a service usage limit. Here are the relevant legal sections we found - please review them directly below."
+        explanation = get_static_message("rate_limit", target_language)
     except Exception:
-        explanation = "We couldn't generate an explanation right now, but here are the relevant legal sections we found below."
+        explanation = get_static_message("error", target_language)
 
     return {
         "query": request.query,

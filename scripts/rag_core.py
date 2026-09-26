@@ -289,3 +289,50 @@ def rewrite_query_for_search(query):
                 time.sleep(2 ** attempt)
                 continue
             return query
+
+
+STATIC_SYSTEM_MESSAGES = {
+    "no_results": {
+        "en": "No relevant legal sections were found for this query. Try rephrasing with more specific details.",
+        "hi": "इस प्रश्न के लिए कोई प्रासंगिक कानूनी धाराएं नहीं मिलीं। अधिक विशिष्ट विवरण के साथ दोबारा पूछने का प्रयास करें।",
+        "kn": "ಈ ಪ್ರಶ್ನೆಗೆ ಯಾವುದೇ ಸಂಬಂಧಿತ ಕಾನೂನು ವಿಭಾಗಗಳು ಕಂಡುಬಂದಿಲ್ಲ. ಹೆಚ್ಚು ನಿರ್ದಿಷ್ಟ ವಿವರಗಳೊಂದಿಗೆ ಮರುರೂಪಿಸಲು ಪ್ರಯತ್ನಿಸಿ.",
+    },
+    "low_confidence_prefix": {
+        "en": (
+            "I am not confident enough about which section applies to your question to give a definite answer. "
+            "Here are the closest matching sections, grouped by Act - please check which one fits your situation, "
+            "or try rephrasing your question with more specific details:"
+        ),
+        "hi": (
+            "मुझे पूरा भरोसा नहीं है कि आपके प्रश्न पर कौन सी धारा लागू होती है ताकि कोई निश्चित उत्तर दिया जा सके। "
+            "यहां निकटतम मेल खाने वाली धाराएं दी गई हैं, जिन्हें अधिनियम के अनुसार समूहीकृत किया गया है - कृपया जांचें कि कौन सी आपकी स्थिति के अनुकूल है, "
+            "या अधिक विशिष्ट विवरण के साथ अपने प्रश्न को दोबारा लिखने का प्रयास करें:"
+        ),
+        "kn": (
+            "ನಿಮ್ಮ ಪ್ರಶ್ನೆಗೆ ಯಾವ ವಿಭಾಗವು ಅನ್ವಯಿಸುತ್ತದೆ ಎಂಬುದರ ಕುರಿತು ಖಚಿತವಾದ ಉತ್ತರವನ್ನು ನೀಡಲು ನನಗೆ ಸಾಕಷ್ಟು ವಿಶ್ವಾಸವಿಲ್ಲ. "
+            "ಕಾಯ್ದೆಯ ಪ್ರಕಾರ ಗುಂಪು ಮಾಡಲಾದ ಅತ್ಯಂತ ನಿಕಟ ಹೊಂದಾಣಿಕೆಯ ವಿಭಾಗಗಳು ಇಲ್ಲಿವೆ - ನಿಮ್ಮ ಪರಿಸ್ಥಿತಿಗೆ ಯಾವುದು ಸರಿಹೊಂದುತ್ತದೆ ಎಂಬುದನ್ನು ದಯವಿಟ್ಟು ಪರಿಶೀಲಿಸಿ, "
+            "ಅಥವಾ ಹೆಚ್ಚು ನಿರ್ದಿಷ್ಟ ವಿವರಗಳೊಂದಿಗೆ ನಿಮ್ಮ ಪ್ರಶ್ನೆಯನ್ನು ಮರುರೂಪಿಸಲು ಪ್ರಯತ್ನಿಸಿ:"
+        ),
+    },
+    "section_label": {
+        "en": "Section",
+        "hi": "धारा",
+        "kn": "ವಿಭಾಗ",
+    },
+    "rate_limit": {
+        "en": "Plain-language explanation is temporarily unavailable due to a service usage limit. Here are the relevant legal sections we found - please review them directly below.",
+        "hi": "सेवा उपयोग सीमा के कारण सरल भाषा में व्याख्या अस्थायी रूप से अनुपलब्ध है। हमें जो प्रासंगिक कानूनी धाराएं मिली हैं, वे यहां दी गई हैं - कृपया नीचे सीधे उनकी समीक्षा करें।",
+        "kn": "ಸೇವಾ ಬಳಕೆಯ ಮಿತಿಯಿಂದಾಗಿ ಸರಳ ಭಾಷೆಯ ವಿವರಣೆಯು ತಾತ್ಕಾಲಿಕವಾಗಿ ಲಭ್ಯವಿಲ್ಲ. ನಾವು ಕಂಡುಕೊಂಡ ಸಂಬಂಧಿತ ಕಾನೂನು ವಿಭಾಗಗಳು ಇಲ್ಲಿವೆ - ದಯವಿಟ್ಟು ಅವುಗಳನ್ನು ಕೆಳಗೆ ನೇರವಾಗಿ ಪರಿಶೀಲಿಸಿ.",
+    },
+    "error": {
+        "en": "We couldn't generate an explanation right now, but here are the relevant legal sections we found below.",
+        "hi": "हम अभी व्याख्या तैयार नहीं कर सके, लेकिन हमें जो प्रासंगिक कानूनी धाराएं मिली हैं, वे नीचे दी गई हैं।",
+        "kn": "ನಾವು ಇದೀಗ ವಿವರಣೆಯನ್ನು ರಚಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ, ಆದರೆ ನಾವು ಕಂಡುಕೊಂಡ ಸಂಬಂಧಿತ ಕಾನೂನು ವಿಭಾಗಗಳನ್ನು ಕೆಳಗೆ ನೀಡಲಾಗಿದೆ.",
+    },
+}
+
+
+def get_static_message(key, language="en"):
+    msgs = STATIC_SYSTEM_MESSAGES.get(key, {})
+    return msgs.get(language) or msgs.get("en", "")
+
