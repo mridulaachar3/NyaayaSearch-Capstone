@@ -15,3 +15,6 @@ finetuned_legal_model/
 data/section_embeddings_cache.npy
 data/section_embeddings_cache_meta.json
 *.npy
+
+# LLM cache
+data/cache/

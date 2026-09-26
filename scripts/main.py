@@ -3,7 +3,16 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import re
 from search_core import SearchEngine, IPC_TO_BNS, IPC_OMITTED, extract_ipc_sections
-from rag_core import generate_explanation, translate_to_english, translate_explanation, detect_language, verify_citations, get_static_message
+from rag_core import (
+    generate_explanation,
+    translate_to_english,
+    translate_explanation,
+    detect_language,
+    verify_citations,
+    get_static_message,
+    get_cached_explanation,
+    save_cached_explanation,
+)
 from citations_core import find_related_cases, load_citations
 from pdf_core import extract_text_from_pdf, answer_question_about_document, summarize_document, extract_dates_and_deadlines
 from dictionary_core import define_term
@@ -203,6 +212,7 @@ def explain(request: SearchRequest):
             "results": [],
             "explanation": get_static_message("no_results", target_language),
             "language": target_language,
+            "model_used": None,
         }
 
     CONFIDENCE_THRESHOLD = 0.30
@@ -225,8 +235,23 @@ def explain(request: SearchRequest):
             "explanation": get_static_message("low_confidence_prefix", target_language) + candidates_text,
             "language": target_language,
             "low_confidence": True,
+            "model_used": None,
         }
 
+    cached = get_cached_explanation(request.query, target_language, results)
+    if cached is not None:
+        cached_exp = cached.get("explanation", cached) if isinstance(cached, dict) else str(cached)
+        cached_model = cached.get("model_used", "openai/gpt-oss-120b") if isinstance(cached, dict) else "openai/gpt-oss-120b"
+        return {
+            "query": request.query,
+            "translated_query": search_query,
+            "results": results,
+            "explanation": cached_exp,
+            "language": target_language,
+            "model_used": cached_model,
+        }
+
+    model_used = None
     try:
         explanation_query = request.query
         ipc_secs = extract_ipc_sections(explanation_query)
@@ -240,14 +265,19 @@ def explain(request: SearchRequest):
             elif num in IPC_OMITTED or (num in IPC_TO_BNS and not bns_list):
                 explanation_query += f" (Note: IPC Section {num_display} was not carried over into the BNS.)"
                 break
-        explanation = generate_explanation(explanation_query, results, language=target_language)
+        explanation, model_used = generate_explanation(
+            explanation_query, results, language=target_language, return_model=True
+        )
         is_valid, unverified_sections = verify_citations(explanation, results)
         if not is_valid:
             explanation += "\n\n[Note: this explanation may reference a section number not confirmed in our search results (" + ", ".join(unverified_sections) + "). Please cross-check with the original statutory text shown above.]"
+        save_cached_explanation(request.query, target_language, results, explanation, model_used)
     except groq.RateLimitError:
         explanation = get_static_message("rate_limit", target_language)
+        model_used = None
     except Exception:
         explanation = get_static_message("error", target_language)
+        model_used = None
 
     return {
         "query": request.query,
@@ -255,6 +285,7 @@ def explain(request: SearchRequest):
         "results": results,
         "explanation": explanation,
         "language": target_language,
+        "model_used": model_used,
     }
 
 

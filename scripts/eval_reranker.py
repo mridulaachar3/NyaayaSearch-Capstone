@@ -634,6 +634,9 @@ def main():
     parser.add_argument("--refresh-translations", action="store_true", help="Force re-translation of queries via Groq instead of using cached translations")
     args = parser.parse_args()
 
+    if args.refresh_translations:
+        os.environ["NYAAYA_DISABLE_CACHE"] = "1"
+
     print("=" * 86, flush=True)
     print("            NYAAYASEARCH: PRODUCTION VS. RERANKER EVALUATION", flush=True)
     print("=" * 86, flush=True)
