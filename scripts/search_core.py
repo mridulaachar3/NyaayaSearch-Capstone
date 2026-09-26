@@ -1,3 +1,4 @@
+import csv
 import hashlib
 import json
 import re
@@ -11,6 +12,7 @@ DATASET = os.path.join(os.path.dirname(__file__), "..", "Legal_Knowledge_Base_co
 CACHE_DIR = os.path.join(os.path.dirname(__file__), "..", "data")
 CACHE_FILE = os.path.join(CACHE_DIR, "section_embeddings_cache.npy")
 CACHE_META_FILE = os.path.join(CACHE_DIR, "section_embeddings_cache_meta.json")
+EXCLUDED_SECTIONS_FILE = os.path.join(CACHE_DIR, "excluded_placeholder_sections.csv")
 
 
 STOP_WORDS = {
@@ -222,6 +224,50 @@ def _compute_embeddings_hash(texts, model_name):
     return hasher.hexdigest()
 
 
+def is_placeholder_record(record):
+    """Identifies placeholder rows in the knowledge base that contain no real legal content
+    (e.g., repealed/omitted section stubs, pure amendment markers, and corrupted/truncated fragments).
+    Returns (is_placeholder, reason).
+    """
+    act = str(record.get("act_name") or "").strip()
+    sec = str(record.get("section_number") or "").strip()
+    title = str(record.get("section_title") or "").strip()
+    text = str(record.get("legal_text") or "").strip()
+
+    # Exceptions:
+    # 1. Indian Contract Act Sec 123 has Sec 124 & 125 conjoined into its text
+    if act == "Indian Contract Act, 1872" and sec == "123":
+        return False, None
+
+    # 2. Right to Information Act Sec 31 has 1,012 chars of real text including Schedules
+    if act == "Right to Information Act, 2005" and sec == "31":
+        return False, None
+
+    t_low = text.lower()
+    tit_low = title.lower()
+
+    # Rule 1: Amendment markers without statutory text (Ins. / Subs.)
+    if tit_low in {"ins.", "subs."} or t_low.startswith("ins. by") or t_low.startswith("subs. by"):
+        return True, "Amendment marker without statutory text (Ins./Subs.)"
+
+    # Rule 2: Corrupted or truncated stubs
+    if (title == text and len(text) < 80) or text == "73" or title == "73":
+        return True, "Corrupted / truncated title fragment"
+    if "panth piploda" in tit_low:
+        return True, "Territorial regulation footnote stub"
+
+    # Rule 3: Repealed or omitted statutory provisions with no substantive text (len < 300)
+    has_rep_or_omit_title = any(k in tit_low for k in ["omitted by", "omitted.", "[omitted", "rep.", "[repealed"])
+    has_rep_or_omit_text = any(k in t_low for k in ["omitted by", "rep. by", "repealed by"])
+    if (has_rep_or_omit_title or has_rep_or_omit_text) and "repeal and savings" not in tit_low:
+        if len(text) < 300:
+            if "omitted" in tit_low or "omitted" in t_low:
+                return True, "Omitted statutory provision"
+            return True, "Repealed statutory provision"
+
+    return False, None
+
+
 class SearchEngine:
     def __init__(self):
         print("Loading legal dataset...")
@@ -230,13 +276,29 @@ class SearchEngine:
 
         headers = list(next(ws.values))
         records = []
+        excluded_rows = []
 
         for row in ws.iter_rows(values_only=True):
             record = dict(zip(headers, row))
-            title = str(record.get("section_title") or "").strip().lower()
-            if title in {"repeal.", "[repealed.]", "[repealed .].", "[omitted.]."}:
+            is_ph, reason = is_placeholder_record(record)
+            if is_ph:
+                excluded_rows.append({
+                    "act": record.get("act_name"),
+                    "section": record.get("section_number"),
+                    "title": record.get("section_title"),
+                    "reason": reason,
+                })
                 continue
             records.append(record)
+
+        if excluded_rows:
+            try:
+                with open(EXCLUDED_SECTIONS_FILE, "w", encoding="utf-8", newline="") as f:
+                    writer = csv.DictWriter(f, fieldnames=["act", "section", "title", "reason"])
+                    writer.writeheader()
+                    writer.writerows(excluded_rows)
+            except Exception as e:
+                print(f"Warning: Failed to save excluded placeholder sections: {e}")
 
         print("Legal records loaded:", len(records))
         self.records = records
