@@ -35,6 +35,11 @@ Create a `.env` file at the repository root and add your Groq API key:
 GROQ_API_KEY=gsk_your_groq_api_key_here
 ```
 
+### Optional: Data Preparation
+Tesseract is **not** needed to run the app. It is only used by `scripts/ocr_constitution.py` (one-time data preparation). If running that script:
+- Tesseract OCR must be installed separately (Windows installer: [UB-Mannheim Tesseract Releases](https://github.com/UB-Mannheim/tesseract/wiki)).
+- Line 6 of `scripts/ocr_constitution.py` reads the binary path from the `TESSERACT_PATH` environment variable, defaulting to `C:\Program Files\Tesseract-OCR\tesseract.exe`.
+
 ---
 
 ## 2. Running the Application
@@ -86,7 +91,15 @@ For fine-tuning and cross-validation on GPU hardware (e.g. Google Colab with T4/
 - `scripts/finetune_crossencoder_cv.py`: 5-fold cross-validation fine-tuning of cross-encoders on GPU.
 - `scripts/stack_finetuned_rf.py`: Stacked fine-tuned cross-encoder + Random Forest training across 5 folds.
 
+> [!IMPORTANT]
+> **Install Pinned Versions in Colab**: Before running, install the pinned versions (Colab's defaults give different classifier results):
+> ```bash
+> !pip install -q scikit-learn==1.9.1 numpy==2.5.3 pandas==3.0.6 sentence-transformers==6.1.0 openpyxl==3.1.5
+> ```
+> Use Colab's built-in PyTorch (GPU build). Always install the pinned versions (at least `scikit-learn==1.9.1`, `numpy==2.5.3`, `pandas==3.0.6`, `sentence-transformers==6.1.0`) before running, as Colab's default library versions produce different classifier results.
+
 Both scripts include Colab setup steps and run standalone when the required data files (`classifier_training_data_with_reranker.csv`, `Legal_Knowledge_Base_combined.xlsx`, `training_pairs.jsonl`) are present.
+
 
 ---
 
