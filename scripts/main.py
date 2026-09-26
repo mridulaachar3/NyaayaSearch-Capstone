@@ -2,7 +2,7 @@ from fastapi import FastAPI, UploadFile, File, Form, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import re
-from search_core import SearchEngine, IPC_TO_BNS
+from search_core import SearchEngine, IPC_TO_BNS, IPC_OMITTED, extract_ipc_sections
 from rag_core import generate_explanation, translate_to_english, translate_explanation, detect_language, verify_citations
 from citations_core import find_related_cases, load_citations
 from pdf_core import extract_text_from_pdf, answer_question_about_document, summarize_document, extract_dates_and_deadlines
@@ -232,13 +232,17 @@ def explain(request: SearchRequest):
 
     try:
         explanation_query = request.query
-        query_lower_check = explanation_query.lower()
-        if "ipc" in query_lower_check:
-            numbers_found = re.findall(r"\b(\d+[a-z]?)\b", query_lower_check)
-            for num in numbers_found:
-                if num in IPC_TO_BNS:
-                    explanation_query += f" (Note: IPC Section {num} corresponds to BNS Section {IPC_TO_BNS[num]} under the current law - please explain using the BNS section shown in the results below.)"
-                    break
+        ipc_secs = extract_ipc_sections(explanation_query)
+        for num in ipc_secs:
+            bns_list = IPC_TO_BNS.get(num, [])
+            num_display = num.upper()
+            if bns_list:
+                bns_str = ", ".join(bns_list) if len(bns_list) > 1 else bns_list[0]
+                explanation_query += f" (Note: IPC Section {num_display} corresponds to BNS Section {bns_str} under the current law - please explain using the BNS section shown in the results below.)"
+                break
+            elif num in IPC_OMITTED or (num in IPC_TO_BNS and not bns_list):
+                explanation_query += f" (Note: IPC Section {num_display} was not carried over into the BNS.)"
+                break
         explanation = generate_explanation(explanation_query, results, language=target_language)
         is_valid, unverified_sections = verify_citations(explanation, results)
         if not is_valid:

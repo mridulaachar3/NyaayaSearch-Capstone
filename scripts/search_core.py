@@ -130,38 +130,70 @@ def tokenize(text):
     return [word for word in words if word not in STOP_WORDS]
 
 
-IPC_TO_BNS = {
-    # Common, high-frequency IPC sections mapped to their BNS 2023 equivalents.
-    # Cross-checked across multiple legal reference sources as of 2026.
-    # NOT an exhaustive or officially verified mapping (511 IPC sections vs
-    # 358 BNS sections means some do not map one-to-one). For legal certainty,
-    # verify against the official bare act.
-    "302": "103",    # Murder
-    "420": "318",    # Cheating
-    "376": "64",     # Rape
-    "498a": "85",    # Cruelty by husband/relatives
-    "307": "109",    # Attempt to murder
-    "304a": "106",   # Causing death by negligence
-    "506": "351",    # Criminal intimidation
-    "509": "79",     # Insulting modesty of a woman
-    "353": "121",    # Assault to deter public servant
-    "336": "125",    # Act endangering life
-    "326": "118",    # Grievous hurt by dangerous weapons
-    "382": "304",    # Theft after preparation for death/hurt
-    "442": "330",    # House-breaking
-    "494": "82",     # Bigamy
-}
+IPC_MAPPING_FILE = os.path.join(CACHE_DIR, "ipc_bns_mapping.csv")
+
+
+def load_ipc_bns_mapping(filepath=IPC_MAPPING_FILE):
+    mapping = {}
+    omitted = set()
+    if not os.path.exists(filepath):
+        return mapping, omitted
+    import csv
+    with open(filepath, "r", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            ipc_sec = str(row.get("ipc_section") or "").strip().lower()
+            if not ipc_sec or ipc_sec == "n/a":
+                continue
+            relation = str(row.get("relation") or "").strip().lower()
+            if relation == "omitted_from_ipc":
+                omitted.add(ipc_sec)
+                if ipc_sec not in mapping:
+                    mapping[ipc_sec] = []
+            elif relation in ("direct", "split"):
+                bns_base = str(row.get("bns_base_section") or "").strip()
+                if bns_base and bns_base.lower() != "n/a":
+                    if ipc_sec not in mapping:
+                        mapping[ipc_sec] = []
+                    if bns_base not in mapping[ipc_sec]:
+                        mapping[ipc_sec].append(bns_base)
+    return mapping, omitted
+
+
+IPC_TO_BNS, IPC_OMITTED = load_ipc_bns_mapping()
+
+
+def extract_ipc_sections(query: str):
+    if not IPC_TO_BNS:
+        return []
+    ql = query.lower()
+    ql = re.sub(r"\b(\d+)\s+([a-z]{1,2})\b", r"\1\2", ql)
+    res = []
+    has_ipc = bool(re.search(r"\b(?:ipc|indian penal code)\b", ql))
+    if has_ipc:
+        nums = re.findall(r"\b(\d+[a-z]*)\b", ql)
+        for n in nums:
+            if n in IPC_TO_BNS and n not in res:
+                res.append(n)
+    else:
+        letter_nums = re.findall(r"\b(\d+[a-z]+)\b", ql)
+        for n in letter_nums:
+            if n in IPC_TO_BNS and n not in res:
+                res.append(n)
+        if re.search(r"\b420\b", ql) and any(w in ql for w in ["cheat", "fraud", "section", "what is", "case"]):
+            if "420" in IPC_TO_BNS and "420" not in res:
+                res.append("420")
+    return res
 
 
 def expand_ipc_references(query):
-    query_lower = query.lower()
-    if "ipc" not in query_lower:
+    ipc_sections = extract_ipc_sections(query)
+    if not ipc_sections:
         return query
-    numbers_found = re.findall(r"\b(\d+[a-z]?)\b", query_lower)
     additions = []
-    for num in numbers_found:
-        if num in IPC_TO_BNS:
-            additions.append(f"bns section {IPC_TO_BNS[num]}")
+    for num in ipc_sections:
+        for bns_sec in IPC_TO_BNS.get(num, []):
+            additions.append(f"bns section {bns_sec}")
     if additions:
         return query + " " + " ".join(additions)
     return query
@@ -304,7 +336,14 @@ class SearchEngine:
 
     def search(self, query, top_k=5, rerank=True):
         raw_query = query
-        query = expand_ipc_references(query)
+        ipc_sections = extract_ipc_sections(raw_query)
+        ipc_target_sections = []
+        for num in ipc_sections:
+            for bns_sec in IPC_TO_BNS.get(num, []):
+                if bns_sec not in ipc_target_sections:
+                    ipc_target_sections.append(bns_sec)
+
+        query = expand_ipc_references(raw_query)
         expanded_query = expand_query(query)
         query_tokens = tokenize(expanded_query)
 
@@ -321,14 +360,6 @@ class SearchEngine:
         boost = np.ones(len(self.records))
         query_lower = query.lower()
 
-        ipc_target_section = None
-        if "ipc" in query_lower:
-            numbers_found = re.findall(r"\b(\d+[a-z]?)\b", query_lower)
-            for num in numbers_found:
-                if num in IPC_TO_BNS:
-                    ipc_target_section = IPC_TO_BNS[num]
-                    break
-
         for i, record in enumerate(self.records):
             title = str(record.get("section_title") or "").lower()
             legal_text = str(record.get("legal_text") or "").lower()
@@ -336,8 +367,8 @@ class SearchEngine:
             section_number = str(record.get("section_number") or "")
             combined = title + " " + legal_text + " " + act_name
 
-            if ipc_target_section is not None:
-                if "bharatiya nyaya sanhita" in act_name and section_number == ipc_target_section:
+            if ipc_target_sections:
+                if "bharatiya nyaya sanhita" in act_name and section_number in ipc_target_sections:
                     boost[i] *= 50.0
 
             if "landlord" in query_lower and "landlord" in combined:
@@ -410,10 +441,14 @@ class SearchEngine:
 
         final_scores = final_scores * boost
 
-        if ipc_target_section is not None:
+        if ipc_target_sections:
+            base_override = final_scores.max() + 1.0
             for i, record in enumerate(self.records):
-                if "bharatiya nyaya sanhita" in str(record.get("act_name") or "").lower() and str(record.get("section_number") or "") == ipc_target_section:
-                    final_scores[i] = final_scores.max() + 1.0
+                if "bharatiya nyaya sanhita" in str(record.get("act_name") or "").lower():
+                    sec_str = str(record.get("section_number") or "")
+                    if sec_str in ipc_target_sections:
+                        priority = len(ipc_target_sections) - ipc_target_sections.index(sec_str)
+                        final_scores[i] = base_override + priority
 
         # Determine if reranking should be performed
         should_rerank = bool(rerank) and self.cross_encoder is not None
