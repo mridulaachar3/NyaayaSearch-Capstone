@@ -45,11 +45,17 @@ def load_engine():
     engine = SearchEngine()
 
 
+class SectionReference(BaseModel):
+    act_name: str
+    section_number: str | int
+
+
 class SearchRequest(BaseModel):
     query: str
     top_k: int = 5
     rerank: bool | None = None
     language: str | None = None
+    sections: list[SectionReference] | None = None
 
 
 class DocumentQuestionRequest(BaseModel):
@@ -181,14 +187,43 @@ def stats():
 @app.post("/search")
 def search(request: SearchRequest):
     validate_query(request.query)
-    search_query, _ = resolve_search_query(request.query)
+    search_query, detected_language = resolve_search_query(request.query)
+    target_language = request.language if request.language in ("en", "hi", "kn") else detected_language
     try:
         rerank = True if request.rerank is None else request.rerank
         results = engine.search(search_query, top_k=request.top_k, rerank=rerank)
         results = attach_related_cases(results)
-        return {"query": request.query, "results": results}
     except Exception as e:
         raise HTTPException(status_code=500, detail="Search failed unexpectedly. Please try again.")
+
+    CONFIDENCE_THRESHOLD = 0.30
+    top_score = results[0].get("hybrid_score", 0) if results else 0
+    low_confidence = bool(results and top_score < CONFIDENCE_THRESHOLD)
+
+    explanation = None
+    if not results:
+        explanation = get_static_message("no_results", target_language)
+    elif low_confidence:
+        acts_seen = {}
+        sec_prefix = get_static_message("section_label", target_language) + " "
+        for r in results:
+            act = r["act_name"]
+            if act not in acts_seen:
+                acts_seen[act] = []
+            acts_seen[act].append(sec_prefix + str(r["section_number"]) + ": " + str(r["section_title"]))
+        candidates_text = ""
+        for act, sections in acts_seen.items():
+            candidates_text += "\n" + act + ":\n" + "\n".join("  - " + s for s in sections)
+        explanation = get_static_message("low_confidence_prefix", target_language) + candidates_text
+
+    return {
+        "query": request.query,
+        "translated_query": search_query,
+        "detected_language": detected_language,
+        "results": results,
+        "low_confidence": low_confidence,
+        "explanation": explanation,
+    }
 
 
 @app.post("/explain")
@@ -198,12 +233,29 @@ def explain(request: SearchRequest):
     search_query, detected_language = resolve_search_query(request.query)
     target_language = request.language if request.language in ("en", "hi", "kn") else detected_language
 
-    try:
-        rerank = True if request.rerank is None else request.rerank
-        results = engine.search(search_query, top_k=request.top_k, rerank=rerank)
-        results = attach_related_cases(results)
-    except Exception:
-        raise HTTPException(status_code=500, detail="Search failed unexpectedly. Please try again.")
+    if request.sections is not None:
+        record_map = getattr(engine, "record_map", None)
+        if record_map is None:
+            record_map = {
+                (str(r.get("act_name") or "").strip().lower(), str(r.get("section_number") or "").strip().lower()): r
+                for r in engine.records
+            }
+            engine.record_map = record_map
+
+        results = []
+        for s in request.sections:
+            act = str(s.act_name or "").strip().lower()
+            sec = str(s.section_number or "").strip().lower()
+            rec = record_map.get((act, sec))
+            if rec:
+                results.append(dict(rec))
+    else:
+        try:
+            rerank = True if request.rerank is None else request.rerank
+            results = engine.search(search_query, top_k=request.top_k, rerank=rerank)
+            results = attach_related_cases(results)
+        except Exception:
+            raise HTTPException(status_code=500, detail="Search failed unexpectedly. Please try again.")
 
     if not results:
         return {
@@ -216,8 +268,8 @@ def explain(request: SearchRequest):
         }
 
     CONFIDENCE_THRESHOLD = 0.30
-    top_score = results[0].get("hybrid_score", 0)
-    if top_score < CONFIDENCE_THRESHOLD:
+    top_score = results[0].get("hybrid_score", 0) if results else 0
+    if request.sections is None and top_score < CONFIDENCE_THRESHOLD:
         acts_seen = {}
         sec_prefix = get_static_message("section_label", target_language) + " "
         for r in results:

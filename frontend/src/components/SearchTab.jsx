@@ -15,12 +15,14 @@ import {
 
 function SearchTab({ setError, uiLanguage, onLanguageChange }) {
   const [query, setQuery] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [loadingSearch, setLoadingSearch] = useState(false);
+  const [loadingExplanation, setLoadingExplanation] = useState(false);
   const [results, setResults] = useState([]);
   const [explanation, setExplanation] = useState("");
   const [isListening, setIsListening] = useState(false);
   const [isSpeaking, setIsSpeaking] = useState(false);
   const recognitionRef = useRef(null);
+  const searchIdRef = useRef(0);
 
   const [explanationCache, setExplanationCache] = useState({});
   const [translating, setTranslating] = useState(false);
@@ -114,6 +116,8 @@ function SearchTab({ setError, uiLanguage, onLanguageChange }) {
   const handleViewSaved = async function (item) {
     setQuery(item.query);
     setResults([]);
+    setLoadingSearch(false);
+    setLoadingExplanation(false);
     const savedLang = item.language || "en";
     const currentUiLang = uiLanguage || "en";
 
@@ -135,37 +139,104 @@ function SearchTab({ setError, uiLanguage, onLanguageChange }) {
     }
 
     const requestLang = uiLanguage || "en";
+    const searchId = ++searchIdRef.current;
 
-    setLoading(true);
+    setLoadingSearch(true);
+    setLoadingExplanation(false);
     setError(null);
     setExplanation("");
     setResults([]);
     setExplanationCache({});
 
+    // Step 1: Fast search to show matched sections immediately (< 1s)
+    let searchData;
     try {
-      const response = await fetch(API_URL + "/explain", {
+      const response = await fetch(API_URL + "/search", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ query: searchQuery, top_k: 5, language: requestLang }),
+        body: JSON.stringify({ query: searchQuery, top_k: 5, rerank: true, language: requestLang }),
       });
 
       if (!response.ok) {
         const message = await extractErrorMessage(response, "Something went wrong. Make sure the backend server is running.");
-        setError(message);
+        if (searchIdRef.current === searchId) {
+          setError(message);
+          setLoadingSearch(false);
+        }
         return;
       }
 
-      const data = await response.json();
-      setResults(data.results || []);
+      searchData = await response.json();
+    } catch (err) {
+      if (searchIdRef.current === searchId) {
+        setError("Could not reach the server. Make sure the backend is running.");
+        setLoadingSearch(false);
+      }
+      console.error(err);
+      return;
+    }
 
-      const returnedExplanation = data.explanation || "";
+    if (searchIdRef.current !== searchId) return;
+
+    const foundResults = searchData.results || [];
+    setResults(foundResults);
+    setLoadingSearch(false);
+    addToHistory(searchQuery);
+
+    // If no results, display static message and do not call /explain
+    if (foundResults.length === 0) {
+      if (searchData.explanation) {
+        setExplanation(searchData.explanation);
+      }
+      return;
+    }
+
+    // If low confidence, show results with low-confidence message and do NOT call /explain
+    if (searchData.low_confidence) {
+      const lowConfExp = searchData.explanation || "";
+      setExplanation(lowConfExp);
+      setExplanationCache({ [requestLang]: lowConfExp });
+      return;
+    }
+
+    // Step 2: Load plain-language explanation in the background
+    setLoadingExplanation(true);
+    const sectionRefs = foundResults.map(function (r) {
+      return {
+        act_name: r.act_name,
+        section_number: r.section_number,
+      };
+    });
+
+    try {
+      const expResponse = await fetch(API_URL + "/explain", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          query: searchQuery,
+          language: requestLang,
+          sections: sectionRefs,
+        }),
+      });
+
+      if (searchIdRef.current !== searchId) return;
+
+      if (!expResponse.ok) {
+        const message = await extractErrorMessage(expResponse, "Could not generate an explanation right now.");
+        setError(message);
+        setLoadingExplanation(false);
+        return;
+      }
+
+      const expData = await expResponse.json();
+      if (searchIdRef.current !== searchId) return;
+
+      const returnedExplanation = expData.explanation || "";
       setExplanationCache(function (prev) {
         const copy = Object.assign({}, prev);
         copy[requestLang] = returnedExplanation;
         return copy;
       });
-
-      addToHistory(searchQuery);
 
       const currentUiLang = latestUiLanguageRef.current || "en";
       if (currentUiLang !== requestLang) {
@@ -174,10 +245,14 @@ function SearchTab({ setError, uiLanguage, onLanguageChange }) {
         setExplanation(returnedExplanation);
       }
     } catch (err) {
-      setError("Could not reach the server. Make sure the backend is running.");
+      if (searchIdRef.current === searchId) {
+        setError("Could not reach the server for explanation.");
+      }
       console.error(err);
     } finally {
-      setLoading(false);
+      if (searchIdRef.current === searchId) {
+        setLoadingExplanation(false);
+      }
     }
   };
 
@@ -290,12 +365,12 @@ function SearchTab({ setError, uiLanguage, onLanguageChange }) {
         >
           {t(uiLanguage, "mic")}
         </button>
-        <button type="submit" className="search-button" disabled={loading}>
-          {loading ? t(uiLanguage, "searching") : t(uiLanguage, "search")}
+        <button type="submit" className="search-button" disabled={loadingSearch}>
+          {loadingSearch ? t(uiLanguage, "searching") : t(uiLanguage, "search")}
         </button>
       </form>
 
-      {searchHistory.length === 0 && !explanation && !loading && (
+      {searchHistory.length === 0 && !explanation && !loadingSearch && !loadingExplanation && (
         <div className="example-queries">
           <span className="example-queries-label">{t(uiLanguage, "tryAsking")}</span>
           <button className="example-chip" onClick={function () { setQuery("landlord not returning deposit"); runSearch("landlord not returning deposit"); }}>Landlord not returning deposit</button>
@@ -339,7 +414,7 @@ function SearchTab({ setError, uiLanguage, onLanguageChange }) {
 
       {isListening && <div className="listening-indicator">{t(uiLanguage, "listeningIndicator")}</div>}
 
-      {loading && (
+      {loadingSearch && (
         <div className="loading">{t(uiLanguage, "searchingFull")}</div>
       )}
 
@@ -349,7 +424,16 @@ function SearchTab({ setError, uiLanguage, onLanguageChange }) {
         </div>
       )}
 
-      {explanation && (
+      {loadingExplanation && (
+        <div className="explanation-card">
+          <div className="explanation-header">
+            <h2>{t(uiLanguage, "explanation")}</h2>
+          </div>
+          <div className="loading">{t(uiLanguage, "loadingExplanation")}</div>
+        </div>
+      )}
+
+      {explanation && !loadingExplanation && (
         <div className="explanation-card">
           <div className="explanation-header">
             <h2>{t(uiLanguage, "explanation")}</h2>
@@ -375,7 +459,7 @@ function SearchTab({ setError, uiLanguage, onLanguageChange }) {
               <button className="listen-button" onClick={speakExplanation}>
                 {isSpeaking ? t(uiLanguage, "stop") : t(uiLanguage, "listen")}
               </button>
-              <button className="save-button" onClick={handleSaveResult} disabled={isCurrentResultSaved}>
+              <button className="save-button" onClick={handleSaveResult} disabled={isCurrentResultSaved || loadingExplanation || !explanation}>
                 {isCurrentResultSaved ? t(uiLanguage, "saved") : t(uiLanguage, "save")}
               </button>
             </div>

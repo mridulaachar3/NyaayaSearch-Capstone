@@ -22,7 +22,8 @@ content.
 |---|---|---|---|
 | search | Search | खोजें | ಹುಡುಕಿ |
 | searching | Searching... | खोज रहे हैं... | ಹುಡುಕಲಾಗುತ್ತಿದೆ... |
-| searchingFull | Searching legal database and generating explanation... | कानूनी डेटाबेस खोजा जा रहा है और व्याख्या तैयार की जा रही है... | ಕಾನೂನು ಡೇಟಾಬೇಸ್ ಹುಡುಕಲಾಗುತ್ತಿದೆ ಮತ್ತು ವಿವರಣೆಯನ್ನು ರಚಿಸಲಾಗುತ್ತಿದೆ... |
+| searchingFull | Searching legal database... | कानूनी डेटाबेस खोजा जा रहा है... | ಕಾನೂನು ಡೇಟಾಬೇಸ್ ಹುಡುಕಲಾಗುತ್ತಿದೆ... |
+| loadingExplanation | Generating plain-language explanation... | सरल भाषा में व्याख्या तैयार की जा रही है... (needs native review (Jayani)) | ಸರಳ ಭಾಷೆಯ ವಿವರಣೆಯನ್ನು ರಚಿಸಲಾಗುತ್ತಿದೆ... (needs native review (Jayani)) |
 | mic | Mic | माइक | ಮೈಕ್ |
 | listeningIndicator | Listening... (click mic again to stop) | सुन रहे हैं... (रोकने के लिए माइक पर फिर से क्लिक करें) | ಆಲಿಸಲಾಗುತ್ತಿದೆ... (ನಿಲ್ಲಿಸಲು ಮೈಕ್ ಅನ್ನು ಮತ್ತೆ ಕ್ಲಿಕ್ ಮಾಡಿ) |
 | tryAsking | Try asking: | ऐसे पूछकर देखें: | ಹೀಗೆ ಕೇಳಲು ಪ್ರಯತ್ನಿಸಿ: |
