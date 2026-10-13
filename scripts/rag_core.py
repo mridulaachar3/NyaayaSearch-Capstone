@@ -55,7 +55,7 @@ def normalize_text(text: str) -> str:
 
 
 # Bump the version whenever the prompt changes to invalidate old cache entries.
-EXPLANATION_PROMPT_VERSION = "v4"
+EXPLANATION_PROMPT_VERSION = "v5"
 
 
 def make_explanation_cache_key(query: str, language: str, search_results: list, model: str = "openai/gpt-oss-120b") -> str:
@@ -295,10 +295,13 @@ def translate_explanation(explanation_text, target_language_code):
             "role": "system",
             "content": (
                 f"You translate legal explanations into {target_language}. "
-                "Preserve all formatting (markdown tables, bullet points, headers) exactly as given. "
-                "Preserve all Act names, Section numbers, and legal terms accurately. "
-                "Translate the ENTIRE text, including any bold titles or headings - do not leave "
-                "any part of it in the original language. "
+                "Maintain the exact markdown table structure and bullet points. "
+                f"Translate the three table header cells ('Section' | 'What it says' | 'What it means for you') into {target_language}. "
+                "In the Section column cells of the table, preserve the full 'number (Act name, year)' text (e.g. '15 (Karnataka Rent Act, 1999)') - "
+                "never drop or shorten the Act name or year; the Act name and year may remain in English. "
+                "Keep every number exactly as given, including section numbers, time limits, amounts, dates and phone numbers such as 15100. "
+                "Translate all headings and bold titles too, such as 'What you can do next'. "
+                f"Translate the rest of the text into {target_language}. "
                 "Return ONLY the translated text, nothing else - no preamble, no notes."
             ),
         },
@@ -378,6 +381,13 @@ def generate_explanation(original_query, search_results, language="en", return_m
         f"Explain what these sections mean for the user's situation, in plain language. "
         f"IMPORTANT: Respond entirely in {target_language}."
     )
+    if (language or "en") in ("hi", "kn"):
+        user_prompt += (
+            f"\n\nTable formatting for {target_language}:\n"
+            f"- Translate the three table headers into {target_language}.\n"
+            "- In each Section cell of the table, keep the full 'number (Act name, year)' text (e.g. '15 (Karnataka Rent Act, 1999)'). The Act name and year may remain in English - do not drop or shorten the Act name or year.\n"
+            "- Keep every number exactly as given, including section numbers, time limits, amounts, dates, and phone numbers such as 15100."
+        )
 
     max_tokens = 3000 if (language or "en") == "en" else 5000
     max_retries = 3
