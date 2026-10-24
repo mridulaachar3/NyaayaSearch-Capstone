@@ -1,12 +1,34 @@
 import fitz  # PyMuPDF
 from groq import Groq
 import os
+import re
 import json
 from dotenv import load_dotenv
 
 load_dotenv()
 
 client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
+
+# Script ranges for the Hindi/Kannada check below (same ranges as rag_core.SCRIPT_RANGES)
+_SCRIPT_RANGES = {
+    "hi": chr(0x0900) + "-" + chr(0x097F),
+    "kn": chr(0x0C80) + "-" + chr(0x0CFF),
+}
+
+
+def _is_mostly_in_script(text, language_code, min_ratio=0.3):
+    """True if at least min_ratio of the letters in text are in the target
+    language's script. The summary model sometimes ignores the 'write in
+    Kannada/Hindi' instruction and answers in English; this catches that."""
+    script = _SCRIPT_RANGES.get(language_code)
+    if not script or not text:
+        return True
+    target_chars = len(re.findall("[" + script + "]", text))
+    latin_chars = len(re.findall("[A-Za-z]", text))
+    total = target_chars + latin_chars
+    if total == 0:
+        return True
+    return target_chars / total >= min_ratio
 
 LANGUAGE_NAMES = {
     "en": "English",
@@ -122,10 +144,14 @@ def summarize_document(document_text, language="en"):
         f"{language_rule}"
     )
 
+    system_prompt = DOCUMENT_SUMMARY_SYSTEM_PROMPT
+    if (language or "en") != "en":
+        system_prompt += f"- Write your ENTIRE answer in {target_language}, including all headings and table headers.\n"
+
     response = client.chat.completions.create(
         model="openai/gpt-oss-20b",
         messages=[
-            {"role": "system", "content": DOCUMENT_SUMMARY_SYSTEM_PROMPT},
+            {"role": "system", "content": system_prompt},
             {"role": "user", "content": user_prompt},
         ],
         temperature=0,
@@ -133,7 +159,59 @@ def summarize_document(document_text, language="en"):
         reasoning_effort="low",
     )
 
-    return response.choices[0].message.content.strip()
+    summary = response.choices[0].message.content.strip()
+
+    # Fallback: if a Hindi/Kannada summary came back in English, translate it
+    # with the same translator the search explanations use. If translation
+    # fails for any reason, keep the English summary rather than showing nothing.
+    if (language or "en") in ("hi", "kn") and not _is_mostly_in_script(summary, language):
+        translated = _translate_in_chunks(summary, language)
+        if translated and _is_mostly_in_script(translated, language):
+            summary = translated
+
+    return summary
+
+
+def _split_into_chunks(text, max_chars=1200):
+    """Split text at line boundaries into chunks of at most ~max_chars, so each
+    piece is short enough to translate without hitting the model's token limit
+    (Hindi/Kannada need several times more tokens than the English source)."""
+    chunks, current = [], ""
+    for line in text.split("\n"):
+        if current and len(current) + len(line) + 1 > max_chars:
+            chunks.append(current)
+            current = line
+        else:
+            current = line if not current else current + "\n" + line
+    if current:
+        chunks.append(current)
+    return chunks
+
+
+def _translate_in_chunks(text, language):
+    """Translate a long summary piece by piece, in parallel. A piece that fails
+    to translate stays in English, so the user still sees the full summary."""
+    try:
+        from rag_core import translate_explanation
+    except Exception:
+        return None
+    from concurrent.futures import ThreadPoolExecutor
+
+    chunks = _split_into_chunks(text)
+
+    def translate_one(chunk):
+        # Pieces with no English words (table separators, blank lines, numbers) stay as they are
+        if not re.search("[A-Za-z]{2,}", chunk):
+            return chunk
+        try:
+            result = translate_explanation(chunk, language)
+            return result if result else chunk
+        except Exception:
+            return chunk
+
+    with ThreadPoolExecutor(max_workers=4) as pool:
+        translated_chunks = list(pool.map(translate_one, chunks))
+    return "\n".join(translated_chunks)
 
 
 def extract_dates_and_deadlines(document_text, language="en"):
