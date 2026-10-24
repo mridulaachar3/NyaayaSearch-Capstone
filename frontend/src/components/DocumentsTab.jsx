@@ -309,7 +309,7 @@ function DocumentsTab({ setError, uiLanguage = "en", isActive, onOpenSavedSearch
 
           {docAnswer && (
             <div>
-              <div className="document-answer">{docAnswer}</div>
+              <div className="document-answer"><ReactMarkdown remarkPlugins={[remarkGfm]}>{docAnswer}</ReactMarkdown></div>
               <p className="legal-disclaimer">{getLegalDisclaimer(uiLanguage)}</p>
             </div>
           )}
