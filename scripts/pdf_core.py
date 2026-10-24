@@ -100,17 +100,47 @@ def answer_question_about_document(document_text, question):
         f"Note: any clause allowing a party to hold possession or remain without paying rent qualifies a clause requiring them to vacate or pay damages—state both clauses and their numbers."
     )
 
-    response = client.chat.completions.create(
-        model="openai/gpt-oss-20b",
-        messages=[
-            {"role": "system", "content": DOCUMENT_SYSTEM_PROMPT},
-            {"role": "user", "content": user_prompt},
-        ],
-        temperature=0.2,
-        max_tokens=1500,
-    )
+    # Hindi/Kannada questions: the small model tends to loop or degrade when it
+    # writes long Hindi/Kannada itself, so ask it to answer in English and then
+    # translate with the same translator the search explanations use.
+    question_language = None
+    for code in ("kn", "hi"):
+        if re.search("[" + _SCRIPT_RANGES[code] + "]", question or ""):
+            question_language = code
+            break
+    if question_language:
+        user_prompt += (
+            "\n\nWrite your answer in English (it will be translated for the user afterwards), "
+            "even though the question is not in English. Keep clause numbers as in the document."
+        )
 
-    return response.choices[0].message.content
+    messages = [
+        {"role": "system", "content": DOCUMENT_SYSTEM_PROMPT},
+        {"role": "user", "content": user_prompt},
+    ]
+
+    # gpt-oss models spend part of max_tokens on hidden reasoning, so use low
+    # reasoning effort and a larger limit, and retry once with more room if the
+    # answer comes back empty.
+    answer = ""
+    for limit in (4000, 8000):
+        response = client.chat.completions.create(
+            model="openai/gpt-oss-20b",
+            messages=messages,
+            temperature=0.2,
+            max_tokens=limit,
+            reasoning_effort="low",
+        )
+        answer = (response.choices[0].message.content or "").strip()
+        if answer:
+            break
+
+    if answer and question_language and not _is_mostly_in_script(answer, question_language):
+        translated = _translate_in_chunks(answer, question_language)
+        if translated and _is_mostly_in_script(translated, question_language):
+            answer = translated
+
+    return answer
 
 
 def summarize_document(document_text, language="en"):
