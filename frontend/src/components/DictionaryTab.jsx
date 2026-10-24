@@ -1,4 +1,6 @@
 import { useState } from "react";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import { API_URL } from "../constants";
 import { extractErrorMessage } from "../utils";
 import { getDictionaryContent } from "../dictionaryContent";
@@ -59,7 +61,7 @@ function DictionaryTab({ uiLanguage }) {
       </form>
       {dictDefinition && (
         <div>
-          <div className="dict-definition">{dictDefinition}</div>
+          <div className="dict-definition"><ReactMarkdown remarkPlugins={[remarkGfm]}>{dictDefinition}</ReactMarkdown></div>
           <p className="legal-disclaimer">{getLegalDisclaimer(uiLanguage)}</p>
         </div>
       )}
