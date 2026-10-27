@@ -45,6 +45,39 @@ def _ask_llm(query, cands):
     raise last
 
 
+def _pin_ipc_targets(items, cands, query, top_k):
+    """If the query names an old IPC section (e.g. "IPC 302"), put the BNS section(s)
+    it maps to first, in mapping order, whatever order the re-ranker chose. Looks in
+    the whole candidate pool so a target the re-ranker dropped is pulled back in."""
+    try:
+        from search_core import extract_ipc_sections, IPC_TO_BNS
+        targets = []
+        for num in extract_ipc_sections(query):
+            for bns_sec in IPC_TO_BNS.get(num, []):
+                if bns_sec not in targets:
+                    targets.append(bns_sec)
+        if not targets:
+            return items
+        pinned = []
+        for target in targets:
+            for c in cands:
+                if (
+                    "bharatiya nyaya sanhita" in str(c.get("act_name") or "").lower()
+                    and str(c.get("section_number")) == target
+                    and c not in pinned
+                ):
+                    pinned.append(c)
+                    break
+        if not pinned:
+            return items
+        keys = {(str(c.get("act_name")), str(c.get("section_number"))) for c in pinned}
+        rest = [c for c in items if (str(c.get("act_name")), str(c.get("section_number"))) not in keys]
+        return (pinned + rest)[:top_k]
+    except Exception as e:
+        print("[ipc_pin] skipped:", type(e).__name__, str(e)[:100])
+        return items
+
+
 def search_with_llm(engine, query, top_k=5, rerank=True):
     cands = engine.search(query, top_k=max(POOL, top_k), rerank=rerank)
     if os.getenv("NYAAYA_QUERY_REWRITE", "0") == "1":
@@ -83,7 +116,7 @@ def search_with_llm(engine, query, top_k=5, rerank=True):
             print("[act_suggest] skipped:", type(e).__name__, str(e)[:100])
     base = cands[:top_k]
     if not (ENABLED and _READY) or len(cands) < 2:
-        return base
+        return _pin_ipc_targets(base, cands, query, top_k)
     key = (query, tuple((str(c.get("act_name")), str(c.get("section_number"))) for c in cands))
     try:
         with _lock:
@@ -106,7 +139,7 @@ def search_with_llm(engine, query, top_k=5, rerank=True):
                 seen.add(i)
         out = [dict(cands[i], llm_reranked=True) for i in order[:top_k]]
         print("[llm_rerank] used LLM order")
-        return out
+        return _pin_ipc_targets(out, cands, query, top_k)
     except Exception as e:
         print("[llm_rerank] fallback:", type(e).__name__, str(e)[:120])
-        return base
+        return _pin_ipc_targets(base, cands, query, top_k)

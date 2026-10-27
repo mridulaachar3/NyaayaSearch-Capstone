@@ -333,7 +333,8 @@ def explain(request: SearchRequest, raw_request: Request):
     model_used = None
     try:
         explanation_query = request.query
-        ipc_secs = extract_ipc_sections(explanation_query)
+        # Hindi/Kannada queries only mention "IPC" after translation to English.
+        ipc_secs = extract_ipc_sections(explanation_query) or extract_ipc_sections(search_query)
         for num in ipc_secs:
             bns_list = IPC_TO_BNS.get(num, [])
             num_display = num.upper()
