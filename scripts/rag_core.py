@@ -242,12 +242,49 @@ def find_stray_script_words(text, target_language_code):
     allowed = target_range + basic_ascii + general_punctuation + whitespace
     return re.findall("[^" + allowed + "]+", text)
 
+# Hindi/Kannada words for the bank instrument. The translator often renders them
+# with the US spelling "check", which the knowledge base (Indian English) does not use.
+_CHEQUE_SOURCE_WORDS = re.compile("चेक|चैक|ಚೆಕ್|ಚೆಕ್ಕು")
+_CHECK_WORD = re.compile(r"\b(check)(s|ed)?\b(?!\s+(?:if|whether|out|in|the status)\b)", re.IGNORECASE)
+
+
+_SALARY_SOURCE_WORDS = re.compile("वेतन|तनख्वाह|तनखा|सैलरी|पगार|ಸಂಬಳ|ವೇತನ|ಪಗಾರ")
+
+
+def normalize_legal_spelling(source_text, english_text):
+    """Fix translator output that hurts retrieval:
+    - 'check' -> 'cheque' when the original query was about a cheque.
+    - unpaid-salary queries: the translation often drops who owes the salary
+      ("I have not received my salary for 3 months."), which pulls in unrelated
+      Acts. Name the employer, as the English query that works does."""
+    if not english_text:
+        return english_text
+    source_text = source_text or ""
+
+    if _CHEQUE_SOURCE_WORDS.search(source_text):
+        def swap(m):
+            word = "cheque" + (m.group(2) or "")
+            return word.capitalize() if m.group(1)[0].isupper() else word
+
+        english_text = _CHECK_WORD.sub(swap, english_text)
+
+    if (
+        _SALARY_SOURCE_WORDS.search(source_text)
+        and re.search(r"\b(salary|wages?)\b", english_text, re.IGNORECASE)
+        and not re.search(r"\bemployer\b", english_text, re.IGNORECASE)
+    ):
+        english_text = english_text.rstrip() + " My employer has not paid my salary."
+
+    return english_text
+
+
 def translate_to_english(query, return_usage=False):
     model = "openai/gpt-oss-120b"
     reasoning_effort = os.environ.get("TRANSLATION_REASONING", "low")
 
     cached = get_cached_translation(query, model=model, reasoning_effort=reasoning_effort)
     if cached is not None:
+        cached = normalize_legal_spelling(query, cached)
         if return_usage:
             return cached, None
         return cached
@@ -260,6 +297,7 @@ def translate_to_english(query, return_usage=False):
                 "content": (
                     "You translate short legal questions into English. "
                     "If the text is already in English, return it unchanged. "
+                    "Use Indian English spelling: a bank cheque is 'cheque', never 'check'. "
                     "Return ONLY the translated text, nothing else - no explanations, no quotes."
                 ),
             },
@@ -275,7 +313,7 @@ def translate_to_english(query, return_usage=False):
     content = response.choices[0].message.content
     if not content or not content.strip():
         raise RuntimeError("Translation model returned empty response")
-    translated_text = content.strip()
+    translated_text = normalize_legal_spelling(query, content.strip())
     save_cached_translation(query, translated_text, model=model, reasoning_effort=reasoning_effort)
     if return_usage:
         return translated_text, response.usage
