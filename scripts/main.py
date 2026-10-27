@@ -212,10 +212,17 @@ def is_uncovered_topic(english_query):
     return bool(UNCOVERED_TOPIC_PATTERN.search(q)) and not RENT_CONTEXT_PATTERN.search(q)
 
 
+# The model is told to start with exactly NOT_COVERED, but sometimes wraps it in markdown
+# (**NOT_COVERED**, `NOT_COVERED`, "NOT_COVERED:"). Accept those too so the marker never
+# reaches the user and the not-covered notice still shows.
+NOT_COVERED_MARKER = re.compile(r"^[\s*_`#>]*NOT_COVERED[\s*_`]*[:.\-–—]?\s*")
+
+
 def _split_not_covered(text):
-    if isinstance(text, str) and text.lstrip().startswith("NOT_COVERED"):
-        rest = text.lstrip()[len("NOT_COVERED"):].lstrip()
-        return rest, True
+    if isinstance(text, str):
+        m = NOT_COVERED_MARKER.match(text)
+        if m:
+            return text[m.end():], True
     return text, False
 
 from llm_rerank import search_with_llm
