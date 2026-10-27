@@ -13,7 +13,7 @@ CACHE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "data"
 DICTIONARY_CACHE_PATH = os.path.join(CACHE_DIR, "dictionary_cache.json")
 _cache_lock = threading.Lock()
 
-DICTIONARY_PROMPT_VERSION = "v3"
+DICTIONARY_PROMPT_VERSION = "v4"
 
 LANGUAGE_NAMES = {
     "en": "English",
@@ -35,6 +35,28 @@ VERIFIED_SECTIONS = {
     "cognizable offence": ("BNSS s. 2(1)(g)", "CrPC s. 2(c)"),
     "cognizable offense": ("BNSS s. 2(1)(g)", "CrPC s. 2(c)"),
 }
+
+
+# Standard Hindi/Kannada legal terms, injected into the prompt so the model does not
+# invent a literal translation (it rendered "cognizable" as "संज्ञा" = noun and
+# "ಜ್ಞಾಪಕಯೋಗ್ಯ" = memorable). Native-speaker review of these terms is recommended.
+_COGNIZABLE = {"hi": "संज्ञेय अपराध", "kn": "ಸಂಜ್ಞೇಯ ಅಪರಾಧ"}
+_NON_COGNIZABLE = {"hi": "असंज्ञेय अपराध", "kn": "ಅಸಂಜ್ಞೇಯ ಅಪರಾಧ"}
+VERIFIED_TERMS = {
+    "cognizable offence": _COGNIZABLE,
+    "cognizable offense": _COGNIZABLE,
+    "cognizable offences": _COGNIZABLE,
+    "cognizable": _COGNIZABLE,
+    "non-cognizable offence": _NON_COGNIZABLE,
+    "non cognizable offence": _NON_COGNIZABLE,
+    "non-cognizable offense": _NON_COGNIZABLE,
+    "noncognizable offence": _NON_COGNIZABLE,
+    "non-cognizable": _NON_COGNIZABLE,
+}
+
+
+def get_verified_term(term: str, lang_code: str):
+    return VERIFIED_TERMS.get((term or "").strip().lower(), {}).get(lang_code)
 
 
 def get_verified_citation(term: str):
@@ -116,6 +138,12 @@ def define_term(term, language="en"):
             "For unusual legal terms, keep the English term in brackets when unsure (e.g. 'धोखाधड़ी (cheating)').\n"
             "Remember: If no verified citation is provided above, do NOT mention ANY section numbers."
         )
+        verified_term = get_verified_term(term, lang_code)
+        if verified_term:
+            user_prompt += (
+                f" Use EXACTLY this {target_language} term for '{term}': {verified_term} - "
+                f"write it as '{verified_term} ({term})' and do not use any other {target_language} word for it."
+            )
 
     max_tokens = 600 if lang_code == "en" else 2000
 
