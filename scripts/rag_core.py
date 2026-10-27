@@ -551,6 +551,11 @@ STATIC_SYSTEM_MESSAGES = {
             "ನಿಮ್ಮ ಪರಿಸ್ಥಿತಿಗೆ ಯಾವುದು ಹೊಂದುತ್ತದೆ ನೋಡಿ, ಅಥವಾ ಇನ್ನಷ್ಟು ವಿವರವಾಗಿ ಕೇಳಿ:"
         ),
     },
+    "uncovered_topic": {
+        "en": "This looks like a question about property or municipal tax, which our legal database does not cover. Please contact your city or town municipal office directly. For free legal help, call NALSA 15100.",
+        "hi": "यह संपत्ति कर या नगरपालिका कर से जुड़ा सवाल लगता है, जिसे हमारा कानूनी डेटाबेस कवर नहीं करता। कृपया सीधे अपने शहर या नगर के नगर निगम/नगरपालिका कार्यालय से संपर्क करें। मुफ़्त कानूनी सहायता के लिए NALSA 15100 पर कॉल करें।",
+        "kn": "ಇದು ಆಸ್ತಿ ತೆರಿಗೆ ಅಥವಾ ನಗರಸಭೆ ತೆರಿಗೆಗೆ ಸಂಬಂಧಿಸಿದ ಪ್ರಶ್ನೆಯಂತೆ ಕಾಣುತ್ತದೆ, ಇದನ್ನು ನಮ್ಮ ಕಾನೂನು ಡೇಟಾಬೇಸ್ ಒಳಗೊಂಡಿಲ್ಲ. ದಯವಿಟ್ಟು ನಿಮ್ಮ ನಗರ ಅಥವಾ ಪಟ್ಟಣದ ಮಹಾನಗರ ಪಾಲಿಕೆ/ನಗರಸಭೆ ಕಚೇರಿಯನ್ನು ನೇರವಾಗಿ ಸಂಪರ್ಕಿಸಿ. ಉಚಿತ ಕಾನೂನು ಸಹಾಯಕ್ಕಾಗಿ NALSA 15100 ಗೆ ಕರೆ ಮಾಡಿ.",
+    },
     "section_label": {
         "en": "Section",
         "hi": "धारा",

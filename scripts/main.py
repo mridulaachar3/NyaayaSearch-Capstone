@@ -198,6 +198,20 @@ def _clean_nan(obj):
     return obj
 
 
+# Topics the knowledge base has no Act for. The LLM sometimes stretches an unrelated
+# Karnataka section to fit these instead of answering NOT_COVERED, so flag them up front.
+# Landlord/tenant wording is excluded: Karnataka Rent Act s.8 does cover who pays property tax.
+UNCOVERED_TOPIC_PATTERN = re.compile(
+    r"\b(?:property|house|municipal|municipality|water|garbage|building)\s+tax(?:es)?\b", re.IGNORECASE
+)
+RENT_CONTEXT_PATTERN = re.compile(r"\b(?:landlord|tenant|tenancy|rent|rented|lease|lessee|lessor)\b", re.IGNORECASE)
+
+
+def is_uncovered_topic(english_query):
+    q = english_query or ""
+    return bool(UNCOVERED_TOPIC_PATTERN.search(q)) and not RENT_CONTEXT_PATTERN.search(q)
+
+
 def _split_not_covered(text):
     if isinstance(text, str) and text.lstrip().startswith("NOT_COVERED"):
         rest = text.lstrip()[len("NOT_COVERED"):].lstrip()
@@ -313,6 +327,17 @@ def explain(request: SearchRequest, raw_request: Request):
             "explanation": get_static_message("low_confidence_prefix", target_language) + candidates_text,
             "language": target_language,
             "low_confidence": True,
+            "model_used": None,
+        }
+
+    if is_uncovered_topic(search_query):
+        return {
+            "query": request.query,
+            "translated_query": search_query,
+            "results": results,
+            "explanation": get_static_message("uncovered_topic", target_language),
+            "not_covered": True,
+            "language": target_language,
             "model_used": None,
         }
 
