@@ -4,11 +4,14 @@ import time
 import json
 import string
 import threading
+import logging
 import groq
 from dotenv import load_dotenv
 from groq import Groq
 
 load_dotenv()
+
+logger = logging.getLogger(__name__)
 
 client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
 
@@ -459,6 +462,12 @@ def generate_explanation(original_query, search_results, language="en", return_m
             raise
 
     if use_backup:
+        logger.warning(
+            "generate_explanation: gpt-oss-120b daily token limit reached; "
+            "falling back to gpt-oss-20b (language=%s). Answers from the backup model may "
+            "ignore the requested language or wrongly say NOT_COVERED.",
+            language,
+        )
         # Retry once with openai/gpt-oss-20b
         response = client.chat.completions.create(
             model="openai/gpt-oss-20b",
