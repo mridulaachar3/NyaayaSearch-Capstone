@@ -185,7 +185,13 @@ def extract_ipc_sections(query: str):
     if not IPC_TO_BNS:
         return []
     ql = query.lower()
-    ql = re.sub(r"\b(\d+)\s+([a-z]{1,2})\b", r"\1\2", ql)
+    # Join "498 a" -> "498a", but only when the joined form is a real IPC section.
+    # Joining blindly turned "420 to me" into "420to" and the section was never detected.
+    ql = re.sub(
+        r"\b(\d+)\s+([a-z]{1,2})\b",
+        lambda m: m.group(1) + m.group(2) if (m.group(1) + m.group(2)) in IPC_TO_BNS else m.group(0),
+        ql,
+    )
     res = []
     has_ipc = bool(re.search(r"\b(?:ipc|indian penal code)\b", ql))
     if has_ipc:
